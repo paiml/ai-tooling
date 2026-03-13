@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="1200" height="200">
+  <rect width="1200" height="200" fill="#0d1117"/>
+
+  <!-- Ambient glows -->
+  <circle cx="200" cy="100" r="120" fill="#ffab00" opacity="0.06"/>
+  <circle cx="600" cy="100" r="120" fill="#9f8fef" opacity="0.06"/>
+  <circle cx="1000" cy="100" r="120" fill="#36b37e" opacity="0.06"/>
+
+  <!-- Left: project planning (clipboard) -->
+  <g id="planning">
+    <rect x="170" y="45" width="60" height="80" rx="6" fill="#161b22" stroke="#ffab00" stroke-width="3"/>
+    <rect x="185" y="38" width="30" height="14" rx="4" fill="#161b22" stroke="#ffab00" stroke-width="2"/>
+    <line x1="185" y1="65" x2="215" y2="65" stroke="#ffab00" stroke-width="2" opacity="0.5"/>
+    <line x1="185" y1="80" x2="210" y2="80" stroke="#ffab00" stroke-width="2" opacity="0.5"/>
+    <line x1="185" y1="95" x2="220" y2="95" stroke="#ffab00" stroke-width="2" opacity="0.5"/>
+    <line x1="185" y1="110" x2="205" y2="110" stroke="#ffab00" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M260 100 L360 100" stroke="#30363d" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="355,96 365,100 355,104" fill="#30363d"/>
+
+  <!-- Center: build (gear + code) -->
+  <g id="build">
+    <circle cx="600" cy="85" r="35" fill="#161b22" stroke="#9f8fef" stroke-width="3"/>
+    <circle cx="600" cy="85" r="14" fill="none" stroke="#9f8fef" stroke-width="2"/>
+    <line x1="600" y1="46" x2="600" y2="54" stroke="#9f8fef" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="600" y1="116" x2="600" y2="124" stroke="#9f8fef" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="561" y1="85" x2="569" y2="85" stroke="#9f8fef" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="631" y1="85" x2="639" y2="85" stroke="#9f8fef" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Play inside -->
+    <polygon points="594,76 594,94 608,85" fill="#36b37e" fill-opacity="0.35" stroke="#36b37e" stroke-width="1.5"/>
+    <!-- Terminal below -->
+    <rect x="565" y="130" width="70" height="35" rx="5" fill="#161b22" stroke="#4a9eff" stroke-width="2"/>
+    <line x1="575" y1="143" x2="585" y2="143" stroke="#36b37e" stroke-width="2"/>
+    <line x1="590" y1="143" x2="620" y2="143" stroke="#4a9eff" stroke-width="2" opacity="0.4"/>
+    <line x1="575" y1="155" x2="585" y2="155" stroke="#36b37e" stroke-width="2"/>
+    <line x1="590" y1="155" x2="615" y2="155" stroke="#4a9eff" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M660 100 L760 100" stroke="#30363d" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="755,96 765,100 755,104" fill="#30363d"/>
+
+  <!-- Right: deploy checkmark -->
+  <g id="deploy">
+    <circle cx="1000" cy="100" r="40" fill="#161b22" stroke="#36b37e" stroke-width="3.5"/>
+    <polyline points="978,100 992,116 1024,82" fill="none" stroke="#36b37e" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- GRID PROTOCOL MANIFEST
+  grid_type: 3-zone-banner
+  canvas: 1200x200
+  background: #0d1117
+  icons: planning, build, deploy
+  text_elements: 0
+  color_palette: #0d1117, #161b22, #4a9eff, #9f8fef, #36b37e, #ffab00, #30363d
+  -->
+</svg>

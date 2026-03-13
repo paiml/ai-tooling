@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <rect width="1200" height="300" fill="#0d1117"/>
+
+  <!-- Five zone backgrounds -->
+  <rect x="0" y="0" width="240" height="300" fill="#161b22" opacity="0.50"/>
+  <rect x="240" y="0" width="240" height="300" fill="#161b22" opacity="0.35"/>
+  <rect x="480" y="0" width="240" height="300" fill="#161b22" opacity="0.50"/>
+  <rect x="720" y="0" width="240" height="300" fill="#161b22" opacity="0.35"/>
+  <rect x="960" y="0" width="240" height="300" fill="#161b22" opacity="0.50"/>
+
+  <!-- Zone dividers -->
+  <line x1="240" y1="0" x2="240" y2="300" stroke="#30363d" stroke-width="1"/>
+  <line x1="480" y1="0" x2="480" y2="300" stroke="#30363d" stroke-width="1"/>
+  <line x1="720" y1="0" x2="720" y2="300" stroke="#30363d" stroke-width="1"/>
+  <line x1="960" y1="0" x2="960" y2="300" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Ambient glows -->
+  <circle cx="120" cy="150" r="120" fill="#ffab00" opacity="0.06"/>
+  <circle cx="360" cy="150" r="120" fill="#4a9eff" opacity="0.06"/>
+  <circle cx="600" cy="150" r="120" fill="#9f8fef" opacity="0.06"/>
+  <circle cx="840" cy="150" r="120" fill="#36b37e" opacity="0.06"/>
+  <circle cx="1080" cy="150" r="120" fill="#ff5630" opacity="0.06"/>
+
+  <!-- Zone 1: Foundation Models (cloud + layers) -->
+  <g id="foundation">
+    <rect x="75" y="80" width="90" height="55" rx="8" fill="#161b22" stroke="#ffab00" stroke-width="3"/>
+    <rect x="85" y="90" width="70" height="10" rx="3" fill="#ffab00" fill-opacity="0.20"/>
+    <rect x="85" y="105" width="50" height="10" rx="3" fill="#ffab00" fill-opacity="0.15"/>
+    <rect x="85" y="120" width="60" height="10" rx="3" fill="#ffab00" fill-opacity="0.10"/>
+    <!-- Cloud above -->
+    <path d="M95,75 Q95,62 108,62 Q112,55 120,55 Q128,55 132,62 Q145,62 145,75 Q145,82 138,82 L102,82 Q95,82 95,75 Z" fill="#161b22" stroke="#ffab00" stroke-width="2.5"/>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <path d="M185 150 L215 150" stroke="#30363d" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="212,146 220,150 212,154" fill="#30363d"/>
+
+  <!-- Zone 2: Bedrock/Applications (API + knowledge base) -->
+  <g id="applications">
+    <!-- API box -->
+    <rect x="310" y="80" width="100" height="70" rx="8" fill="#161b22" stroke="#4a9eff" stroke-width="3"/>
+    <!-- Endpoint lines -->
+    <line x1="325" y1="100" x2="350" y2="100" stroke="#36b37e" stroke-width="2.5"/>
+    <line x1="355" y1="100" x2="395" y2="100" stroke="#4a9eff" stroke-width="2.5" opacity="0.4"/>
+    <line x1="325" y1="118" x2="350" y2="118" stroke="#36b37e" stroke-width="2.5"/>
+    <line x1="355" y1="118" x2="390" y2="118" stroke="#4a9eff" stroke-width="2.5" opacity="0.4"/>
+    <line x1="325" y1="136" x2="350" y2="136" stroke="#36b37e" stroke-width="2.5"/>
+    <line x1="355" y1="136" x2="385" y2="136" stroke="#4a9eff" stroke-width="2.5" opacity="0.4"/>
+    <!-- Knowledge base cylinder below -->
+    <ellipse cx="360" cy="175" rx="30" ry="8" fill="#161b22" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="330" y="175" width="60" height="25" fill="#161b22" stroke="none"/>
+    <line x1="330" y1="175" x2="330" y2="200" stroke="#4a9eff" stroke-width="2"/>
+    <line x1="390" y1="175" x2="390" y2="200" stroke="#4a9eff" stroke-width="2"/>
+    <ellipse cx="360" cy="200" rx="30" ry="8" fill="#161b22" stroke="#4a9eff" stroke-width="2"/>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <path d="M425 150 L455 150" stroke="#30363d" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="452,146 460,150 452,154" fill="#30363d"/>
+
+  <!-- Zone 3: Agents + Orchestration (brain + nodes) -->
+  <g id="agents">
+    <circle cx="600" cy="110" r="35" fill="#161b22" stroke="#9f8fef" stroke-width="3"/>
+    <!-- Neural nodes -->
+    <circle cx="585" cy="100" r="8" fill="#9f8fef" fill-opacity="0.25" stroke="#9f8fef" stroke-width="2"/>
+    <circle cx="615" cy="100" r="8" fill="#9f8fef" fill-opacity="0.25" stroke="#9f8fef" stroke-width="2"/>
+    <circle cx="600" cy="125" r="8" fill="#9f8fef" fill-opacity="0.25" stroke="#9f8fef" stroke-width="2"/>
+    <!-- Connections -->
+    <line x1="593" y1="100" x2="607" y2="100" stroke="#9f8fef" stroke-width="1.5" opacity="0.6"/>
+    <line x1="589" y1="106" x2="596" y2="119" stroke="#9f8fef" stroke-width="1.5" opacity="0.6"/>
+    <line x1="611" y1="106" x2="604" y2="119" stroke="#9f8fef" stroke-width="1.5" opacity="0.6"/>
+    <!-- Subagent nodes below -->
+    <circle cx="565" cy="185" r="15" fill="#161b22" stroke="#ffab00" stroke-width="2.5"/>
+    <circle cx="635" cy="185" r="15" fill="#161b22" stroke="#4a9eff" stroke-width="2.5"/>
+    <circle cx="600" cy="210" r="15" fill="#161b22" stroke="#36b37e" stroke-width="2.5"/>
+    <!-- Lines from brain to subagents -->
+    <line x1="580" y1="140" x2="570" y2="170" stroke="#9f8fef" stroke-width="2" opacity="0.4"/>
+    <line x1="620" y1="140" x2="630" y2="170" stroke="#9f8fef" stroke-width="2" opacity="0.4"/>
+    <line x1="600" y1="145" x2="600" y2="195" stroke="#9f8fef" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <path d="M665 150 L695 150" stroke="#30363d" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="692,146 700,150 692,154" fill="#30363d"/>
+
+  <!-- Zone 4: Security (shield + lock) -->
+  <g id="security">
+    <path d="M840,75 L895,100 L895,175 Q895,210 840,225 Q785,210 785,175 L785,100 Z" fill="#161b22" stroke="#36b37e" stroke-width="3.5"/>
+    <!-- Lock inside -->
+    <rect x="822" y="155" width="36" height="30" rx="5" fill="#161b22" stroke="#ffab00" stroke-width="2.5"/>
+    <path d="M830,155 L830,143 Q830,130 840,130 Q850,130 850,143 L850,155" fill="none" stroke="#ffab00" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="840" cy="168" r="4" fill="#ffab00" fill-opacity="0.35" stroke="#ffab00" stroke-width="1.5"/>
+  </g>
+
+  <!-- Arrow 4→5 -->
+  <path d="M905 150 L935 150" stroke="#30363d" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="932,146 940,150 932,154" fill="#30363d"/>
+
+  <!-- Zone 5: Production Deploy (rocket/checkmark) -->
+  <g id="deploy">
+    <circle cx="1080" cy="140" r="45" fill="#161b22" stroke="#ff5630" stroke-width="3.5"/>
+    <!-- Lambda symbol -->
+    <path d="M1058,170 L1075,110 L1080,110 L1068,155 L1095,155" fill="none" stroke="#ffab00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Checkmark below -->
+    <circle cx="1080" cy="215" r="18" fill="#161b22" stroke="#36b37e" stroke-width="3"/>
+    <polyline points="1069,215 1076,223 1092,207" fill="none" stroke="#36b37e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="600" y="275" text-anchor="middle" fill="#e6edf3" font-family="system-ui,-apple-system,sans-serif" font-size="18" font-weight="600" letter-spacing="2">APPLIED AI ENGINEERING — 20-COURSE SPECIALIZATION</text>
+
+  <!-- GRID PROTOCOL MANIFEST
+  grid_type: 5-zone-hero
+  canvas: 1200x300
+  background: #0d1117
+  zone_dividers: x=240, x=480, x=720, x=960
+  icons: foundation, applications, agents, security, deploy
+  text_elements: 1
+  color_palette: #0d1117, #161b22, #4a9eff, #9f8fef, #36b37e, #ffab00, #ff5630, #30363d, #e6edf3
+  -->
+</svg>

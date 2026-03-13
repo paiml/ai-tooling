@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <rect width="1200" height="600" fill="#0d1117"/>
+
+  <!-- Zone backgrounds -->
+  <rect x="0" y="0" width="300" height="600" fill="#161b22" opacity="0.50"/>
+  <rect x="300" y="0" width="300" height="600" fill="#161b22" opacity="0.35"/>
+  <rect x="600" y="0" width="300" height="600" fill="#161b22" opacity="0.50"/>
+  <rect x="900" y="0" width="300" height="600" fill="#161b22" opacity="0.35"/>
+
+  <!-- Zone dividers -->
+  <line x1="300" y1="0" x2="300" y2="600" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="600" y1="0" x2="600" y2="600" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="900" y1="0" x2="900" y2="600" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Ambient glows -->
+  <circle cx="150" cy="300" r="180" fill="#4a9eff" opacity="0.06"/>
+  <circle cx="450" cy="300" r="180" fill="#ffab00" opacity="0.06"/>
+  <circle cx="750" cy="300" r="180" fill="#9f8fef" opacity="0.06"/>
+  <circle cx="1050" cy="300" r="180" fill="#36b37e" opacity="0.06"/>
+
+  <!-- Zone 1: Foundation Models / AWS Cloud -->
+  <g id="foundation-zone">
+    <!-- Cloud shape -->
+    <path d="M90,180 Q90,140 130,140 Q145,110 175,110 Q205,110 220,140 Q260,140 260,180 Q260,210 230,210 L120,210 Q90,210 90,180 Z" fill="#161b22" stroke="#4a9eff" stroke-width="4"/>
+    <circle cx="155" cy="170" r="6" fill="#4a9eff" fill-opacity="0.30" stroke="#4a9eff" stroke-width="2"/>
+    <circle cx="190" cy="165" r="5" fill="#4a9eff" fill-opacity="0.30" stroke="#4a9eff" stroke-width="2"/>
+
+    <!-- Model layers below cloud -->
+    <rect x="100" y="240" width="100" height="25" rx="5" fill="#161b22" stroke="#4a9eff" stroke-width="3"/>
+    <rect x="100" y="275" width="100" height="25" rx="5" fill="#161b22" stroke="#9f8fef" stroke-width="3"/>
+    <rect x="100" y="310" width="100" height="25" rx="5" fill="#161b22" stroke="#ffab00" stroke-width="3"/>
+
+    <!-- Arrow cloud → models -->
+    <line x1="150" y1="210" x2="150" y2="235" stroke="#36b37e" stroke-width="3"/>
+    <polygon points="144,232 150,242 156,232" fill="#36b37e"/>
+
+    <!-- RAG document icon -->
+    <rect x="110" y="370" width="80" height="100" rx="6" fill="#161b22" stroke="#4a9eff" stroke-width="3"/>
+    <line x1="125" y1="395" x2="175" y2="395" stroke="#4a9eff" stroke-width="2.5" opacity="0.4"/>
+    <line x1="125" y1="412" x2="170" y2="412" stroke="#4a9eff" stroke-width="2.5" opacity="0.4"/>
+    <line x1="125" y1="429" x2="175" y2="429" stroke="#4a9eff" stroke-width="2.5" opacity="0.4"/>
+    <line x1="125" y1="446" x2="165" y2="446" stroke="#4a9eff" stroke-width="2.5" opacity="0.4"/>
+    <!-- Search magnifier on doc -->
+    <circle cx="170" cy="380" r="12" fill="#0d1117" stroke="#36b37e" stroke-width="2.5"/>
+    <line x1="179" y1="389" x2="188" y2="398" stroke="#36b37e" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Zone 2: Orchestration / Agents -->
+  <g id="agent-zone">
+    <!-- Agent brain circle -->
+    <circle cx="450" cy="180" r="60" fill="#161b22" stroke="#ffab00" stroke-width="4"/>
+    <!-- Neural nodes -->
+    <circle cx="425" cy="165" r="10" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="2.5"/>
+    <circle cx="475" cy="165" r="10" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="2.5"/>
+    <circle cx="450" cy="200" r="10" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="2.5"/>
+    <!-- Neural connections -->
+    <line x1="435" y1="165" x2="465" y2="165" stroke="#ffab00" stroke-width="2" opacity="0.6"/>
+    <line x1="430" y1="173" x2="444" y2="193" stroke="#ffab00" stroke-width="2" opacity="0.6"/>
+    <line x1="470" y1="173" x2="456" y2="193" stroke="#ffab00" stroke-width="2" opacity="0.6"/>
+
+    <!-- Arrow brain → subagents -->
+    <line x1="450" y1="240" x2="450" y2="280" stroke="#36b37e" stroke-width="3"/>
+    <polygon points="444,277 450,287 456,277" fill="#36b37e"/>
+
+    <!-- Three subagent circles -->
+    <circle cx="400" cy="320" r="25" fill="#161b22" stroke="#9f8fef" stroke-width="3"/>
+    <circle cx="450" cy="340" r="25" fill="#161b22" stroke="#4a9eff" stroke-width="3"/>
+    <circle cx="500" cy="320" r="25" fill="#161b22" stroke="#36b37e" stroke-width="3"/>
+    <!-- Arrows between agents -->
+    <line x1="425" y1="320" x2="425" y2="340" stroke="#ffab00" stroke-width="2" opacity="0.5"/>
+    <line x1="475" y1="340" x2="475" y2="320" stroke="#ffab00" stroke-width="2" opacity="0.5"/>
+
+    <!-- Gear icons in subagents -->
+    <circle cx="400" cy="320" r="8" fill="none" stroke="#9f8fef" stroke-width="2"/>
+    <circle cx="450" cy="340" r="8" fill="none" stroke="#4a9eff" stroke-width="2"/>
+    <circle cx="500" cy="320" r="8" fill="none" stroke="#36b37e" stroke-width="2"/>
+
+    <!-- Terminal/CLI box -->
+    <rect x="380" y="400" width="140" height="90" rx="8" fill="#161b22" stroke="#ffab00" stroke-width="3"/>
+    <line x1="395" y1="425" x2="410" y2="425" stroke="#36b37e" stroke-width="2.5"/>
+    <line x1="415" y1="425" x2="490" y2="425" stroke="#ffab00" stroke-width="2.5" opacity="0.4"/>
+    <line x1="395" y1="445" x2="410" y2="445" stroke="#36b37e" stroke-width="2.5"/>
+    <line x1="415" y1="445" x2="480" y2="445" stroke="#ffab00" stroke-width="2.5" opacity="0.4"/>
+    <line x1="395" y1="465" x2="410" y2="465" stroke="#36b37e" stroke-width="2.5"/>
+    <line x1="415" y1="465" x2="500" y2="465" stroke="#ffab00" stroke-width="2.5" opacity="0.4"/>
+  </g>
+
+  <!-- Zone 3: Security / Quality -->
+  <g id="security-zone">
+    <!-- Shield -->
+    <path d="M750,130 L820,170 L820,280 Q820,340 750,370 Q680,340 680,280 L680,170 Z" fill="#161b22" stroke="#9f8fef" stroke-width="4"/>
+    <!-- Lock inside shield -->
+    <rect x="730" y="240" width="40" height="35" rx="5" fill="#161b22" stroke="#36b37e" stroke-width="3"/>
+    <path d="M738,240 L738,228 Q738,212 750,212 Q762,212 762,228 L762,240" fill="none" stroke="#36b37e" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="750" cy="255" r="4" fill="#36b37e" fill-opacity="0.35" stroke="#36b37e" stroke-width="2"/>
+
+    <!-- Guardrail bars -->
+    <rect x="700" y="400" width="100" height="12" rx="3" fill="#36b37e" fill-opacity="0.25" stroke="#36b37e" stroke-width="2"/>
+    <rect x="700" y="420" width="80" height="12" rx="3" fill="#9f8fef" fill-opacity="0.25" stroke="#9f8fef" stroke-width="2"/>
+    <rect x="700" y="440" width="90" height="12" rx="3" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="700" y="460" width="70" height="12" rx="3" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="2"/>
+
+    <!-- Check marks -->
+    <polyline points="693,405 697,410 705,400" fill="none" stroke="#36b37e" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="693,425 697,430 705,420" fill="none" stroke="#36b37e" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="693,445 697,450 705,440" fill="none" stroke="#36b37e" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="693,465 697,470 705,460" fill="none" stroke="#36b37e" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Zone 4: Production / Serverless -->
+  <g id="production-zone">
+    <!-- Lambda function box -->
+    <rect x="970" y="130" width="160" height="80" rx="10" fill="#161b22" stroke="#36b37e" stroke-width="4"/>
+    <polyline points="1005,175 1030,150 1055,180 1080,150 1105,175" fill="none" stroke="#36b37e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Arrow Lambda → Container -->
+    <line x1="1050" y1="210" x2="1050" y2="250" stroke="#36b37e" stroke-width="3"/>
+    <polygon points="1044,247 1050,257 1056,247" fill="#36b37e"/>
+
+    <!-- Container/Docker -->
+    <rect x="990" y="260" width="120" height="80" rx="8" fill="#161b22" stroke="#4a9eff" stroke-width="3.5"/>
+    <!-- Container whale shape -->
+    <rect x="1010" y="285" width="12" height="12" rx="2" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="1028" y="285" width="12" height="12" rx="2" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="1046" y="285" width="12" height="12" rx="2" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="1064" y="285" width="12" height="12" rx="2" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="1019" y="305" width="12" height="12" rx="2" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="1037" y="305" width="12" height="12" rx="2" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="1055" y="305" width="12" height="12" rx="2" fill="#4a9eff" fill-opacity="0.25" stroke="#4a9eff" stroke-width="2"/>
+
+    <!-- Arrow Container → Deploy -->
+    <line x1="1050" y1="340" x2="1050" y2="380" stroke="#36b37e" stroke-width="3"/>
+    <polygon points="1044,377 1050,387 1056,377" fill="#36b37e"/>
+
+    <!-- Deployment checkmark circle -->
+    <circle cx="1050" cy="440" r="50" fill="#161b22" stroke="#36b37e" stroke-width="4"/>
+    <polyline points="1025,440 1040,458 1078,420" fill="none" stroke="#36b37e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Metrics bars below -->
+    <rect x="990" y="510" width="120" height="50" rx="6" fill="#161b22" stroke="#9f8fef" stroke-width="2.5"/>
+    <rect x="1005" y="522" width="40" height="8" rx="2" fill="#36b37e" fill-opacity="0.30" stroke="#36b37e" stroke-width="1.5"/>
+    <rect x="1005" y="536" width="55" height="8" rx="2" fill="#4a9eff" fill-opacity="0.30" stroke="#4a9eff" stroke-width="1.5"/>
+  </g>
+
+  <!-- GRID PROTOCOL MANIFEST
+  grid_type: 4-zone
+  canvas: 1200x600
+  background: #0d1117
+  zone_dividers: x=300, x=600, x=900
+  icons: foundation-zone, agent-zone, security-zone, production-zone
+  text_elements: 0
+  color_palette: #0d1117, #161b22, #4a9eff, #36b37e, #9f8fef, #ffab00, #30363d
+  -->
+</svg>

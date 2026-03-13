@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <rect width="200" height="50" fill="#0d1117"/>
+
+  <!-- Cloud icon (foundation) -->
+  <g id="nav-cloud">
+    <path d="M15,22 Q15,15 22,15 Q25,10 32,10 Q39,10 42,15 Q49,15 49,22 Q49,28 43,28 L21,28 Q15,28 15,22 Z" fill="#161b22" stroke="#4a9eff" stroke-width="1.5"/>
+    <circle cx="30" cy="20" r="2" fill="#4a9eff" fill-opacity="0.35"/>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M54 25 L62 25" stroke="#30363d" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="60,22.5 64,25 60,27.5" fill="#30363d"/>
+
+  <!-- Agent brain (orchestration) -->
+  <g id="nav-agent">
+    <circle cx="82" cy="25" r="12" fill="#161b22" stroke="#ffab00" stroke-width="1.5"/>
+    <circle cx="76" cy="22" r="3" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="1"/>
+    <circle cx="88" cy="22" r="3" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="1"/>
+    <circle cx="82" cy="30" r="3" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="1"/>
+    <line x1="79" y1="22" x2="85" y2="22" stroke="#ffab00" stroke-width="1" opacity="0.5"/>
+    <line x1="78" y1="24" x2="81" y2="28" stroke="#ffab00" stroke-width="1" opacity="0.5"/>
+    <line x1="86" y1="24" x2="83" y2="28" stroke="#ffab00" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M98 25 L106 25" stroke="#30363d" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="104,22.5 108,25 104,27.5" fill="#30363d"/>
+
+  <!-- Shield (security) -->
+  <g id="nav-security">
+    <path d="M125,12 L138,18 L138,32 Q138,40 125,44 Q112,40 112,32 L112,18 Z" fill="#161b22" stroke="#9f8fef" stroke-width="1.5"/>
+    <rect x="120" y="27" width="10" height="8" rx="1.5" fill="#161b22" stroke="#36b37e" stroke-width="1.2"/>
+    <path d="M122,27 L122,24 Q122,20 125,20 Q128,20 128,24 L128,27" fill="none" stroke="#36b37e" stroke-width="1.2"/>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M143 25 L151 25" stroke="#30363d" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="149,22.5 153,25 149,27.5" fill="#30363d"/>
+
+  <!-- Deploy checkmark (production) -->
+  <g id="nav-deploy">
+    <circle cx="172" cy="25" r="14" fill="#161b22" stroke="#36b37e" stroke-width="2"/>
+    <polyline points="163,25 169,32 182,19" fill="none" stroke="#36b37e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- GRID PROTOCOL MANIFEST
+  grid_type: compact-strip
+  canvas: 200x50
+  background: #0d1117
+  icons: nav-cloud, nav-agent, nav-security, nav-deploy
+  text_elements: 0
+  color_palette: #0d1117, #161b22, #4a9eff, #9f8fef, #36b37e, #ffab00, #30363d
+  -->
+</svg>

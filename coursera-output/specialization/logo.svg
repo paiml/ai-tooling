@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <rect width="1000" height="1000" fill="#0d1117"/>
+
+  <!-- Ambient glow -->
+  <circle cx="500" cy="420" r="320" fill="#4a9eff" opacity="0.08"/>
+  <circle cx="500" cy="580" r="260" fill="#9f8fef" opacity="0.06"/>
+
+  <!-- Shield outline -->
+  <path d="M500,160 L740,280 L740,580 Q740,750 500,850 Q260,750 260,580 L260,280 Z" fill="#161b22" stroke="#4a9eff" stroke-width="5"/>
+
+  <!-- Inner shield glow -->
+  <path d="M500,200 L700,300 L700,560 Q700,710 500,800 Q300,710 300,560 L300,300 Z" fill="#4a9eff" fill-opacity="0.06"/>
+
+  <!-- Cloud layer (top) — AWS/cloud services -->
+  <path d="M440,290 Q440,260 470,260 Q480,240 510,240 Q540,240 550,260 Q580,260 580,290 Q580,310 560,310 L460,310 Q440,310 440,290 Z" fill="#161b22" stroke="#4a9eff" stroke-width="4"/>
+  <circle cx="490" cy="280" r="4" fill="#4a9eff" fill-opacity="0.35"/>
+  <circle cx="530" cy="275" r="3" fill="#4a9eff" fill-opacity="0.35"/>
+
+  <!-- Flow arrow Cloud → Agent -->
+  <line x1="500" y1="310" x2="500" y2="350" stroke="#36b37e" stroke-width="3"/>
+  <polygon points="494,347 500,357 506,347" fill="#36b37e"/>
+
+  <!-- Agent brain (middle) — agentic AI / MCP -->
+  <circle cx="500" cy="420" r="55" fill="#161b22" stroke="#ffab00" stroke-width="4"/>
+  <!-- Neural nodes inside -->
+  <circle cx="480" cy="405" r="8" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="2"/>
+  <circle cx="520" cy="405" r="8" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="2"/>
+  <circle cx="500" cy="435" r="8" fill="#ffab00" fill-opacity="0.25" stroke="#ffab00" stroke-width="2"/>
+  <!-- Neural connections -->
+  <line x1="488" y1="405" x2="512" y2="405" stroke="#ffab00" stroke-width="2" opacity="0.6"/>
+  <line x1="484" y1="411" x2="496" y2="429" stroke="#ffab00" stroke-width="2" opacity="0.6"/>
+  <line x1="516" y1="411" x2="504" y2="429" stroke="#ffab00" stroke-width="2" opacity="0.6"/>
+
+  <!-- Flow arrow Agent → Production -->
+  <line x1="500" y1="475" x2="500" y2="510" stroke="#36b37e" stroke-width="3"/>
+  <polygon points="494,507 500,517 506,507" fill="#36b37e"/>
+
+  <!-- Production stack (bottom) — serverless/deploy -->
+  <rect x="420" y="530" width="160" height="45" rx="8" fill="#161b22" stroke="#9f8fef" stroke-width="4"/>
+  <!-- Lambda symbol inside -->
+  <polyline points="450,555 470,540 490,565 510,540 530,555" fill="none" stroke="#9f8fef" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Shield lock icon (security) — left side -->
+  <g id="security-lock">
+    <rect x="330" y="400" width="40" height="35" rx="5" fill="#161b22" stroke="#36b37e" stroke-width="3.5"/>
+    <path d="M340,400 L340,388 Q340,372 350,372 Q360,372 360,388 L360,400" fill="none" stroke="#36b37e" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="350" cy="415" r="4" fill="#36b37e" fill-opacity="0.35" stroke="#36b37e" stroke-width="2"/>
+  </g>
+
+  <!-- Metrics chart icon — right side -->
+  <g id="quality-metrics">
+    <rect x="630" y="390" width="50" height="50" rx="5" fill="none" stroke="#4a9eff" stroke-width="3"/>
+    <rect x="640" y="420" width="8" height="15" rx="1" fill="#4a9eff" fill-opacity="0.30" stroke="#4a9eff" stroke-width="2"/>
+    <rect x="651" y="410" width="8" height="25" rx="1" fill="#36b37e" fill-opacity="0.30" stroke="#36b37e" stroke-width="2"/>
+    <rect x="662" y="400" width="8" height="35" rx="1" fill="#ffab00" fill-opacity="0.30" stroke="#ffab00" stroke-width="2"/>
+  </g>
+
+  <!-- GRID PROTOCOL MANIFEST
+  grid_type: centered-icon
+  canvas: 1000x1000
+  background: #0d1117
+  icons: cloud-layer, agent-brain, production-stack, security-lock, quality-metrics
+  text_elements: 0
+  color_palette: #0d1117, #161b22, #4a9eff, #ffab00, #36b37e, #9f8fef
+  -->
+</svg>

@@ -1,0 +1,59 @@
+# AI Tooling
+
+<p align="center">
+  <img src="assets/hero.svg" alt="Applied AI Engineering: 20-Course Specialization" width="100%"/>
+</p>
+
+**From Foundation Models to Production** — a 20-course Coursera specialization
+that takes you from generative AI fundamentals on AWS through deterministic
+agents and multi-modal programming to serverless multi-model architectures.
+
+## Courses
+
+| # | Course | Focus |
+|---|--------|-------|
+| 1 | **Generative AI and Foundation Models on AWS** | Tokenization, RAG, Bedrock, llama.cpp, SageMaker Canvas |
+| 2 | **Intelligent Applications with Amazon Bedrock** | Bedrock console, Claude, Dracula pattern, knowledge bases, agents |
+| 3 | **Prompt Architecture and NLP on Amazon Bedrock** | Token lifecycle, prompt-as-code, chain-of-thought, Ollama bridge |
+| 4 | **AI Orchestration: From Local Models to Cloud** | Prompt pyramid, caching, Ollama, llamafile, GPU computing, Spot |
+| 5 | **Enterprise AIOps and Amazon Q Business** | Q Business, CloudShell, cost control, MLOps, RAG workflows |
+| 6 | **AI Security and Governance on AWS** | Guardrails, CloudTrail, auth patterns, SageMaker Clarify, Rust |
+| 7 | **AI-Powered Analytics and Performance Engineering** | Lambda, Rust, Amazon Q, CodeCatalyst, benchmarking |
+| 8 | **CLI Automation with Amazon Q and CloudShell** | Q CLI, Docker, CDK, Lambda, ECR, infrastructure as code |
+| 9 | **Deterministic LLM Programming and Quality Metrics** | Code quality, AST analysis, technical debt, PMAT, Elo ratings |
+| 10 | **Agentic AI: Actor Models and Subagent Architecture** | Actix, Rust, Go, Deno, supervision trees, subagents |
+| 11 | **AI-Assisted Debugging and Test-Driven Fixes** | AI debugging, TDD, logging, context gathering, bug discovery |
+| 12 | **Multi-Modal AI: Screenshots to Production Code** | Copilot, screenshot-to-code, Playwright, MCP, visual programming |
+| 13 | **Privacy-Conscious Development with AI Assistants** | GitHub Advanced Security, Dependabot, Grype, secure prompting |
+| 14 | **AI-Powered Data Pipelines with Deno** | Deno tasks, pre-commit hooks, quality gates, pipeline automation |
+| 15 | **Building Deterministic MCP Agents** | MCP, property testing, fuzz testing, FSM, Toyota Way |
+| 16 | **Conversational Bot Architecture with Rust and Deno** | Tokio, async runtime, memory safety, Discord, Bedrock |
+| 17 | **AI Code Review Automation with GitHub Actions** | Actions, code review, LLM prompting, GitHub Marketplace |
+| 18 | **LLM Security: Vulnerabilities and Defense Patterns** | Prompt injection, model theft, information disclosure, plugin security |
+| 19 | **Build a Production SaaS Application with AI** | API design, Docker, GitHub Pages, test harnesses, MVP |
+| 20 | **AI Engineering Capstone: Serverless Multi-Model Systems** | Cargo Lambda, Bedrock routing, YAML prompts, production deployment |
+
+## Capstone Projects
+
+<p align="center">
+  <img src="capstones/banner.svg" alt="Capstone Projects" width="100%"/>
+</p>
+
+Each course includes a hands-on capstone project that integrates all modules into a realistic scenario. See the [capstones/](capstones/) directory.
+
+## Structure
+
+Each course is ~60 minutes of 3–5 minute videos organized as:
+
+**Course → Module → Lesson (3–5 videos) → Key Terms + Reflection**
+
+Every module ends with a **Critical Thinking Assessment** (quiz + role-play practice assignment).
+
+## Instructors
+
+- **Noah Gift** — Founder, Pragmatic AI Labs · Duke University (Courses 1–10, 13, 15, 20)
+- **Alfredo Deza** — Author and content creator · Python, Rust, DevOps, ML (Courses 11, 12, 14, 16–19)
+
+## License
+
+Course content copyright Pragmatic AI Labs. Code examples are MIT licensed.
