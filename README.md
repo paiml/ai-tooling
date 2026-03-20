@@ -33,13 +33,30 @@ agents and multi-modal programming to serverless multi-model architectures.
 | 19 | **Build a Production SaaS Application with AI** | API design, Docker, GitHub Pages, test harnesses, MVP |
 | 20 | **AI Engineering Capstone: Serverless Multi-Model Systems** | Cargo Lambda, Bedrock routing, YAML prompts, production deployment |
 
+## Installation
+
+```bash
+git clone https://github.com/paiml/ai-tooling.git
+cd ai-tooling
+make check
+```
+
+## Usage
+
+```bash
+make help          # Show available commands
+make lint          # Lint markdown files
+make test          # Validate course structure (20 courses, capstone sections)
+make check         # Run lint + test
+```
+
 ## Capstone Projects
 
 <p align="center">
   <img src="capstones/banner.svg" alt="Capstone Projects" width="100%"/>
 </p>
 
-Each course includes a hands-on capstone project that integrates all modules into a realistic scenario. See the [capstones/](capstones/) directory.
+Each course includes a hands-on capstone project that integrates all modules into a realistic scenario. Completed capstones can be shared on LinkedIn as portfolio projects. See the [capstones/](capstones/) directory.
 
 ## Structure
 

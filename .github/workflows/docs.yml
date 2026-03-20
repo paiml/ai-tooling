@@ -1,0 +1,21 @@
+name: Docs
+on:
+  push:
+    branches: [main]
+    paths:
+      - "capstones/**"
+      - "README.md"
+  pull_request:
+    branches: [main]
+    paths:
+      - "capstones/**"
+      - "README.md"
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate capstone structure
+        run: make test
+      - name: Check for broken links
+        run: make lint
