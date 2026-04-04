@@ -2,35 +2,35 @@
 
 ## Project Overview
 
-Build a deterministic agent system using Model Context Protocol (MCP) for structured tool communication, backed by PMAT quality metrics and comprehensive testing including property testing and fuzz testing. The project applies Toyota Way lean principles to software quality, models agent behavior with finite state machines, and evaluates quality across six essential metric dimensions.
+Build a deterministic MCP agent backed by provable contracts and PMAT compliance enforcement. The project uses the provable-contracts seven-phase pipeline (Extract, Specify, Scaffold, Implement, Falsify, Verify, Prove) to derive mathematically grounded kernel contracts from peer-reviewed papers, then enforces those contracts through property-based testing, Kani bounded model checking, and `pmat comply` quality gates. The agent communicates through Model Context Protocol, with every tool invocation governed by YAML contracts that trace back to specific equations.
 
 ## Deliverables
 
-### 1. MCP Agent with Finite State Machine Behavior
-Implement a deterministic MCP agent that communicates with tools through the Model Context Protocol client-server architecture. Model the agent's behavior as a finite state machine with explicit state transitions, ensuring every output is reproducible given the same input. Implement tool registration and invocation patterns following the MCP specification. Demonstrate the agent using Claude Code as an MCP client connected to PMAT for automated quality analysis.
+### 1. Contract Authorship and the Seven-Phase Pipeline
+Write at least three YAML kernel contracts following the provable-contracts schema. Each contract must include metadata with paper references, named equations with domain and codomain, at least four proof obligations (spanning invariant, equivalence, bound, and monotonicity types), and a falsification test section with Popperian predictions. Run the full pipeline: `pv validate` to check schema compliance, `pv scaffold` to generate Rust trait stubs and failing test skeletons, `pv probar` to generate property-based tests, `pv kani` to generate bounded model checking harnesses, and `pv lint` to pass all seven quality gates. Demonstrate the traceability chain from paper equation to proof obligation to passing test using `pv audit`.
 
-### 2. Comprehensive Testing Suite with Property and Fuzz Testing
-Build a testing suite covering all six essential test types for deterministic agent validation. Implement property-based testing to verify behavioral invariants across randomized input spaces and fuzz testing to discover edge cases and failure modes. Use agentic AI to assist with test generation and execution. Apply the certainty-scope tradeoff framework to guide testing strategy, documenting which tests provide high certainty over narrow scope versus broad coverage with lower confidence.
+### 2. Property Testing, Fuzz Testing, and Bounded Model Checking
+Implement the scaffold generated in Deliverable 1 with scalar kernel functions that satisfy each contract's equations. Run the generated probar property tests to falsify invariants across randomized input spaces and the generated fuzz targets (`pv fuzz`) to discover edge cases. Execute Kani harnesses to prove correctness bounds for at least two contracts, documenting which proof obligations pass exhaustive verification versus those requiring stub-float strategies. Apply the certainty-scope tradeoff framework: property tests provide broad probabilistic coverage, fuzz tests discover unknown unknowns, and Kani proofs provide bounded mathematical certainty. Score all contracts with `pv score` and achieve a minimum B grade across all five scoring dimensions.
 
-### 3. Quality Assessment with PMAT and Toyota Way Analysis
-Run PMAT quality assessment on at least three software projects, applying the six essential quality metrics to evaluate project health. Analyze survivorship-adjusted language popularity metrics to contextualize technology adoption decisions. Produce a Toyota Way analysis that maps lean manufacturing principles (kaizen, waste elimination) to the software development practices observed in the assessed projects, with specific recommendations for quality improvement.
+### 3. MCP Agent with PMAT Compliance Enforcement
+Build a deterministic MCP agent that exposes provable-contracts operations as tools through the Model Context Protocol client-server architecture. The agent must support tool registration for `validate`, `lint`, `score`, and `audit` operations, with every invocation producing deterministic output given the same contract input. Run `pmat comply check` on the project to verify compliance with current PMAT standards, achieving passing status on config files, quality thresholds, dependency health, dead code, and shell quality checks. Generate a `pmat comply report` documenting compliance status. Produce a Toyota Way analysis mapping kaizen (continuous improvement through contract tightening), muda elimination (dead code and waste scoring via CB-300), and jidoka (automated quality gates that stop the line on contract violation) to the provable-contracts workflow.
 
 ## Evaluation Criteria
 
 ### Distinction
-- MCP agent demonstrates deterministic behavior with FSM state coverage analysis and measurable reliability metrics
-- Testing suite includes property tests, fuzz tests, and at least four other test types with certainty-scope analysis
-- PMAT assessment covers three projects with Toyota Way mapping and actionable improvement recommendations
+- Three or more contracts pass all seven `pv lint` gates with A-grade scores and complete traceability chains verified by `pv audit`
+- Kani harnesses prove at least two contracts with exhaustive strategy, property tests achieve full obligation coverage, and fuzz targets discover at least one edge case requiring contract amendment
+- MCP agent passes `pmat comply check` with zero non-compliant findings, and Toyota Way analysis maps all three lean principles to specific provable-contracts enforcement mechanisms
 
 ### Proficient
-- MCP agent communicates with tools through the protocol with basic deterministic behavior
-- Testing includes property testing and fuzz testing with documented edge case discoveries
-- PMAT assessment covers at least two projects with quality metrics and basic Toyota Way analysis
+- At least two contracts pass `pv validate` and `pv lint` with B-grade scores and documented proof obligations
+- Property tests and fuzz targets run successfully with documented certainty-scope analysis across test types
+- MCP agent exposes tool operations through the protocol and `pmat comply check` runs with documented findings
 
 ### Developing
-- Agent communicates but lacks FSM modeling or deterministic behavior guarantees
-- Testing covers basic test types without property testing or fuzz testing
-- PMAT assessment is run on a single project without cross-project comparison or lean analysis
+- Contracts exist but do not pass `pv lint` or lack traceability from equations to proof obligations
+- Testing covers property tests but omits Kani verification or fuzz testing
+- Agent runs but lacks MCP tool registration or `pmat comply` integration
 
 ## Share Your Work
 
