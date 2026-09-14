@@ -1,7 +1,0 @@
-# A proposed write that looks perfectly reasonable and violates two rules:
-# the licence is not one the domain allows, and the retention exceeds the cap.
-# Nothing in the text itself signals either problem.
-type Dataset
-owner data-platform
-license WTFPL
-retention_days 400

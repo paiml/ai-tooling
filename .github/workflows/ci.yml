@@ -26,34 +26,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Java 17 (Apache Jena 5.6.0 is compiled to class file 61)
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-
+      # `make check` runs `make shell`, which REFUSES rather than skips when bashrs
+      # is absent -- that refusal is correct and must not be softened. So the tool
+      # has to be here. Removing the examples removed cargo-deny and Java 17 with
+      # them, because nothing in this repository has needed either since; bashrs
+      # still has a subject, scripts/check-required-contexts.sh, which is itself
+      # one of the gates.
       - name: Cache cargo tools
         uses: actions/cache@v4
         with:
           path: ~/.cargo/bin
-          key: cargo-tools-${{ runner.os }}-deny0.19-bashrs
+          key: cargo-tools-${{ runner.os }}-bashrs
 
-      - name: Install cargo-deny and bashrs
-        run: |
-          cargo deny --version 2>/dev/null | grep -q "cargo-deny 0.19" || cargo install --locked cargo-deny --version "~0.19"
-          command -v bashrs     >/dev/null 2>&1 || cargo install --locked bashrs
+      - name: Install bashrs
+        run: command -v bashrs >/dev/null 2>&1 || cargo install --locked bashrs
 
-      - name: Course structure, examples, shell lint, supply chain, contexts
+      - name: Course structure, shell lint, required contexts
         run: make check
 
-      # `pmat comply` is deliberately NOT run here. It exits 1 on CB-2100 in this
-      # repository and in paiml/rmedia alike -- a condition neither repo can
-      # currently satisfy -- so wiring it into the required check would make the
-      # gate unpassable, and the only way out would be `|| true`, which is a gate
-      # that cannot fail. Comply is run locally and reviewed; it is not faked here.
-      - name: Per-example quality gates (fmt, clippy -D warnings, tests)
-        run: |
-          for d in examples/*/; do
-            test -f "$d/Cargo.toml" || continue
-            ( cd "$d" && cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test )
-          done

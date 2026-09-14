@@ -1,9 +1,0 @@
-[package]
-name = "gate-the-write"
-version = "0.1.0"
-edition = "2021"
-publish = false
-
-# No dependencies, on purpose: `cargo run` works with no network and nothing to
-# install. The lesson is the gate, not a parser.
-[dependencies]
