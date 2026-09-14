@@ -1,1 +1,7 @@
 coursera-assets/
+
+# Example build output and downloaded tools.
+examples/*/target/
+examples/*/tools/
+examples/*/build/
+.examples-checked

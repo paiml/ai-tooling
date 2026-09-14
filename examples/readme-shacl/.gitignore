@@ -1,0 +1,5 @@
+# Jena is downloaded and verified by `make tools`, never committed.
+tools/
+# Everything the pipeline writes.
+build/
+target/

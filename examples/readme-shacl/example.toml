@@ -1,0 +1,40 @@
+# Generated README is built from this file. Edit it, not README.md.
+
+[example]
+title       = "Closed shape rejects undeclared"
+summary     = "a README's own frontmatter, judged by a SHACL shape it cannot see"
+description = "This README validates itself. Its frontmatter becomes RDF, and a closed SHACL shape decides whether those claims are well formed -- a shape the document never sees and cannot negotiate with. Closed is the load-bearing word: SHACL says nothing about properties no shape mentions, so an open shape accepts any key you invent. Closing it inverts the default, and an undeclared key becomes a violation rather than a shrug. Three exit codes are the interface: 0 pass, 1 at least one violation, 2 the check could not run -- and 2 is never mapped to 0, because zero focus nodes and zero violations print the same reassuring number."
+run         = "make check"
+requires    = "Requires a Rust toolchain and Java 17+. Apache Jena is downloaded and sha256-verified by `make tools`; nothing under `tools/` is committed."
+
+[[files]]
+path = "shapes/readme.ttl"
+note = "the TBox -- five declared properties and sh:closed true"
+
+[[files]]
+path = "src/main.rs"
+note = "readme2ttl: frontmatter to Turtle, with the triple-count contract asserted"
+
+[[files]]
+path = "scripts/lint.sh"
+note = "extract, validate, count focus nodes first, exit 0/1/2"
+
+[[files]]
+path = "scripts/falsify.sh"
+note = "eight mutations that must go red, plus a control arm that must stay green"
+
+[[files]]
+path = "scripts/java17.sh"
+note = "resolves a JVM Jena can actually run, instead of dying on a class-file version"
+
+[[files]]
+path = "scripts/report.awk"
+note = "turns a SHACL report into one line per violation"
+
+[[files]]
+path = "tools.lock"
+note = "the pinned Jena version and its sha256"
+
+[[files]]
+path = "tests/fixtures"
+note = "one good README and seven that each break exactly one rule"

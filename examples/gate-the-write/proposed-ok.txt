@@ -1,0 +1,5 @@
+# A proposed write that satisfies the domain model.
+type Dataset
+owner data-platform
+license CC-BY
+retention_days 90

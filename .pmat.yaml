@@ -1,0 +1,39 @@
+# PMAT compliance configuration for ai-tooling.
+#
+# Two checks are disabled here, both because they CANNOT be made to pass from
+# inside this repository -- not because they are inconvenient. Each entry
+# carries the measurement behind it and the condition that would re-enable it,
+# so an exemption cannot quietly outlive its justification.
+
+comply:
+  checks:
+    # CB-1700 / CB-1701 -- branch protection and supply chain.
+    #
+    # Both read `gh api repos/paiml/ai-tooling/branches/main/protection`, the
+    # LEGACY branch-protection endpoint. `main` here is protected by the ORG
+    # RULESET "Green Main — unified gate enforcement" (id 13878864, active,
+    # requiring the `gate` context, non_fast_forward and a pull request), and
+    # GitHub answers that endpoint with `404 Branch not protected` whenever
+    # protection comes from a ruleset rather than classic branch protection.
+    #
+    # It is not an auth failure. Measured 2026-09-14 with a token carrying
+    # `repo` and `admin:org`: `gh api orgs/paiml/rulesets/13878864` returns the
+    # ruleset and its required context, while the legacy endpoint 404s in the
+    # same session. The gate is real and the check is looking in the wrong place.
+    #
+    # So the gate is real and CB-1700 cannot see it. The required contexts are
+    # additionally committed to `.github/required-status-checks.txt`, and
+    # `scripts/check-required-contexts.sh` re-verifies that file against the
+    # LIVE ruleset on every `make check` -- inside the required `gate` context,
+    # failing on drift and SKIPPING out loud when it cannot reach the API. The
+    # fact is therefore reviewable in-tree rather than only through an endpoint
+    # that lies about it.
+    #
+    # CB-1701's other half -- "no supply-chain policy is stated" -- is genuinely
+    # fixed rather than exempted: deny.toml exists and `cargo deny check` runs
+    # for every example inside `make check`, which is what `gate` executes.
+    #
+    # Re-enable when pmat reads `repos/{slug}/rulesets` (upstream), or if `main`
+    # ever gains classic branch protection.
+    cb-1700: { enabled: false }
+    cb-1701: { enabled: false }

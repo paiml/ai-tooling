@@ -1,0 +1,58 @@
+# The TBox. Nothing that writes a README can see this file, and that is the
+# entire argument of the lesson: the constraint lives outside the thing it
+# judges, so the document cannot negotiate with it.
+#
+# sh:closed true is the load-bearing line. Without it a README could carry any
+# key at all and still validate, because SHACL says nothing about properties no
+# shape mentions. Closing the shape inverts the default: what is not declared
+# is refused.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <http://example.org/readme#> .
+
+ex:ReadmeShape
+    a                   sh:NodeShape ;
+    sh:targetClass      ex:Readme ;
+    sh:closed           true ;
+    # rdf:type is how the focus node is found at all, so it can never be a
+    # violation of the shape that the type triple selected.
+    sh:ignoredProperties ( rdf:type ) ;
+
+    sh:property [
+        sh:path     ex:title ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "a README must carry exactly one title" ;
+    ] ;
+
+    sh:property [
+        sh:path     ex:status ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in       ( "Spark" "Drafting" "Greenlit" "Live" ) ;
+        sh:message  "status must be one of Spark, Drafting, Greenlit, Live" ;
+    ] ;
+
+    sh:property [
+        sh:path     ex:owner ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "a README must name exactly one owner" ;
+    ] ;
+
+    sh:property [
+        sh:path     ex:updated ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:message  "updated must be exactly one xsd:date (NNNN-NN-NN)" ;
+    ] ;
+
+    sh:property [
+        sh:path     ex:track ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in       ( "Systems & Rust" "Data & Databases" "AI & LLMs"
+                      "Cloud & DataOps" "Methodology & Career" ) ;
+        sh:message  "track must be one of the five published tracks" ;
+    ] .

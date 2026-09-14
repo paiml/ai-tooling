@@ -1,0 +1,28 @@
+# Generated README is built from this file. Edit it, not README.md.
+
+[example]
+title       = "Gate a proposed write"
+summary     = "constraints compiled from an ontology, applied to output the model never saw them with"
+description = "A domain model in one file, a proposed write in another, and a gate that puts them together. The proposal cannot argue with the constraints because the two never meet until the gate runs. Three exit codes are the interface: 0 the write may land, 1 at least one violation, 2 the gate could not run -- which is also blocked, because a checker that cannot read its own rules has found nothing, not nothing wrong."
+run         = "cargo run -- proposed-bad.txt"
+requires    = "Requires a Rust toolchain. No dependencies and no network: `cargo run` and `cargo test` work offline."
+
+[[files]]
+path = "ontology.txt"
+note = "the domain model, and the only place the rules live"
+
+[[files]]
+path = "proposed-ok.txt"
+note = "a write that satisfies every constraint (exit 0)"
+
+[[files]]
+path = "proposed-bad.txt"
+note = "a write that reads fine and violates two rules (exit 1)"
+
+[[files]]
+path = "Cargo.toml"
+note = "no dependencies, on purpose"
+
+[[files]]
+path = "src/main.rs"
+note = "the gate, and four tests including an anti-vacuity arm"
