@@ -26,6 +26,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # `make check` runs `make shell`, which REFUSES rather than skips when bashrs
+      # is absent -- that refusal is correct and must not be softened. So the tool
+      # has to be here. Removing the examples removed cargo-deny and Java 17 with
+      # them, because nothing in this repository has needed either since; bashrs
+      # still has a subject, scripts/check-required-contexts.sh, which is itself
+      # one of the gates.
+      - name: Cache cargo tools
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin
+          key: cargo-tools-${{ runner.os }}-bashrs
+
+      - name: Install bashrs
+        run: command -v bashrs >/dev/null 2>&1 || cargo install --locked bashrs
+
       - name: Course structure, shell lint, required contexts
         run: make check
 

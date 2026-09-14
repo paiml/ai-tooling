@@ -57,7 +57,7 @@ shell: ## Every gate here is a shell script, so the scripts are gated too
 	@command -v bashrs >/dev/null 2>&1 || { \
 	  echo "NOT RUN: bashrs is absent, so no shell script was linted."; \
 	  echo "  cargo install --locked bashrs"; exit 1; }
-	@for s in scripts/*.sh examples/*/scripts/*.sh; do \
+	@for s in scripts/*.sh; do \
 	  test -f "$$s" || continue; \
 	  echo "  bashrs lint $$s"; \
 	  bashrs lint "$$s" || exit 1; \
