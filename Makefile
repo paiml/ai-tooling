@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: help lint test test-fast coverage fmt fmt-check check bench examples supply-chain contexts shell
+.PHONY: help lint test test-fast coverage fmt fmt-check check bench contexts shell
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -44,34 +44,11 @@ fmt: ## Format (no-op for markdown repo)
 fmt-check: ## Check formatting
 	@echo "No formatter configured for markdown-only repo"
 
-check: lint shell test examples supply-chain contexts ## Run all checks
+check: lint shell test contexts ## Run all checks
 	@echo "=== All checks passed ==="
 
 bench: ## Benchmark (no-op)
 	@echo "No benchmarks for this repo"
-
-examples: ## Validate the worked examples and run each one's own gates
-	@echo "=== examples: consistency ==="
-	@./scripts/check-examples.sh --self-test
-	@./scripts/check-examples.sh
-	@echo "=== examples: gate-the-write ==="
-	@cd examples/gate-the-write && cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test
-	@echo "=== examples: readme-shacl ==="
-	@$(MAKE) --no-print-directory -C examples/readme-shacl check
-
-# cargo-deny is PINNED, for the same reason Jena is: 0.19 takes --config on the
-# `check` subcommand and 0.20 takes it globally, so an unpinned install makes the
-# invocation wrong on whichever side of the bump you are not on. Caught in CI:
-# "error: unexpected argument '--config' found" against a green local run.
-supply-chain: ## cargo-deny over every example, against the repo's one policy
-	@command -v cargo-deny >/dev/null 2>&1 || { \
-	  echo "NOT RUN: cargo-deny is absent, so no supply-chain policy was enforced."; \
-	  echo "  cargo install --locked cargo-deny --version \"~0.19\""; exit 1; }
-	@for d in examples/*/; do \
-	  test -f "$$d/Cargo.toml" || continue; \
-	  echo "  cargo deny: $$d"; \
-	  ( cd "$$d" && cargo deny --manifest-path Cargo.toml check --config "$(CURDIR)/deny.toml" ) || exit 1; \
-	done
 
 contexts: ## The required status checks on disk must match the live ruleset
 	@./scripts/check-required-contexts.sh

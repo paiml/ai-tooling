@@ -10,17 +10,6 @@ agents and multi-modal programming to serverless multi-model architectures.
 
 **Enroll on Coursera:** [AI Tooling Specialization](https://www.coursera.org/specializations/ai-tooling)
 
-## Worked examples
-
-Runnable code for the courses. Each directory is self-contained, states its
-own contract, and fails closed — a check that crashes, or never runs, does not
-return a pass.
-
-| example | what it covers |
-|---|---|
-| [`examples/gate-the-write`](examples/gate-the-write) | constraints compiled from an ontology, applied to output the model never saw them with |
-| [`examples/readme-shacl`](examples/readme-shacl) | a README's own frontmatter, judged by a closed SHACL shape it cannot see |
-
 ## Courses
 
 | # | Course | Focus | Companion Repo | Capstone |
