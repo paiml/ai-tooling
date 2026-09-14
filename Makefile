@@ -59,10 +59,14 @@ examples: ## Validate the worked examples and run each one's own gates
 	@echo "=== examples: readme-shacl ==="
 	@$(MAKE) --no-print-directory -C examples/readme-shacl check
 
+# cargo-deny is PINNED, for the same reason Jena is: 0.19 takes --config on the
+# `check` subcommand and 0.20 takes it globally, so an unpinned install makes the
+# invocation wrong on whichever side of the bump you are not on. Caught in CI:
+# "error: unexpected argument '--config' found" against a green local run.
 supply-chain: ## cargo-deny over every example, against the repo's one policy
 	@command -v cargo-deny >/dev/null 2>&1 || { \
 	  echo "NOT RUN: cargo-deny is absent, so no supply-chain policy was enforced."; \
-	  echo "  cargo install --locked cargo-deny"; exit 1; }
+	  echo "  cargo install --locked cargo-deny --version \"~0.19\""; exit 1; }
 	@for d in examples/*/; do \
 	  test -f "$$d/Cargo.toml" || continue; \
 	  echo "  cargo deny: $$d"; \

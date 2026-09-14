@@ -40,7 +40,7 @@ jobs:
 
       - name: Install cargo-deny and bashrs
         run: |
-          command -v cargo-deny >/dev/null 2>&1 || cargo install --locked cargo-deny
+          cargo deny --version 2>/dev/null | grep -q "cargo-deny 0.19" || cargo install --locked cargo-deny --version "~0.19"
           command -v bashrs     >/dev/null 2>&1 || cargo install --locked bashrs
 
       - name: Course structure, examples, shell lint, supply chain, contexts
