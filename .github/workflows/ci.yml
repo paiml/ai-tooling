@@ -4,23 +4,54 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+
+# The `gate` job is what the org ruleset "Green Main — unified gate enforcement"
+# requires BY NAME. GitHub names a check run after the job id, so this job must
+# stay named `gate` at the TOP LEVEL of this workflow; moved under a reusable
+# workflow it reports as `<caller> / gate` and satisfies nothing.
+#
+# The work runs INSIDE `gate` rather than in a job it merely `needs:`. An
+# aggregator that only inspects another job's result gates nothing by itself --
+# `pmat comply` reads this workflow and says so (CB-2100), and it is right: the
+# contexts a ruleset requires should be the contexts that actually execute the
+# checks.
+#
+# The required contexts are also written down in
+# .github/required-status-checks.txt, because the legacy branch-protection API
+# answers 404 for a ruleset-protected branch, so a tool querying only that
+# endpoint concludes this repository has no gate at all.
 jobs:
-  validate:
+  gate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate course structure
+
+      - name: Java 17 (Apache Jena 5.6.0 is compiled to class file 61)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Cache cargo tools
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin
+          key: cargo-tools-${{ runner.os }}-deny0.19-bashrs-pmat
+
+      - name: Install cargo-deny, bashrs and pmat
+        run: |
+          command -v cargo-deny >/dev/null 2>&1 || cargo install --locked cargo-deny
+          command -v bashrs     >/dev/null 2>&1 || cargo install --locked bashrs
+          command -v pmat       >/dev/null 2>&1 || cargo install --locked pmat
+
+      - name: Course structure, examples, shell lint, supply chain, contexts
         run: make check
 
-  gate:
-    runs-on: ubuntu-latest
-    needs: [validate]
-    if: always()
-    steps:
-      - name: Aggregate required checks
+      - name: Quality gates (clippy, complexity, TDG, dead code, SATD)
         run: |
-          if [ "${{ needs.validate.result }}" != "success" ]; then
-            echo "validate failed: ${{ needs.validate.result }}"
-            exit 1
-          fi
-          echo "All required checks passed."
+          for d in examples/*/; do
+            test -f "$d/Cargo.toml" || continue
+            ( cd "$d" && cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test )
+          done
+          pmat quality-gate --fail-on-violation
+          pmat comply

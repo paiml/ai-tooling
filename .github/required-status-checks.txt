@@ -1,0 +1,3 @@
+# contexts required by org ruleset "Green Main" (id 13878864).
+# Verified against the live ruleset by scripts/check-required-contexts.sh.
+gate

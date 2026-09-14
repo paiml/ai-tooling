@@ -1,0 +1,34 @@
+# Supply-chain policy for the Rust examples under examples/.
+#
+# Enforced by `cargo deny check` inside `make check`, which is what the required
+# `gate` context runs -- a policy that no required check executes is a document,
+# not a control.
+
+[advisories]
+yanked = "deny"
+ignore = []
+
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+
+[licenses]
+# Permissive only. A copyleft dependency in a course example would put the
+# learner's own work under an obligation they did not choose.
+# Exactly the licences the dependency tree actually carries. An unmatched
+# allowance is a failure here on purpose: a permission nobody uses is a
+# permission nobody reviewed.
+allow = ["MIT", "Apache-2.0"]
+# The example crates themselves are publish = false and carry no licence
+# field; they are the thing being licensed, not a dependency of it.
+private = { ignore = true }
+# gate-the-write has ZERO dependencies on purpose, so no licence is ever
+# encountered there and every allowance reads as unused. That is a property
+# of the example, not a policy defect.
+unused-allowed-license = "allow"
+confidence-threshold = 0.9
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
