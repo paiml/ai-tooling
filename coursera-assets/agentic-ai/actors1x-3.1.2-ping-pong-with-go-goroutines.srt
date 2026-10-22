@@ -1,0 +1,213 @@
+1
+00:00:09,700 --> 00:00:15,373
+Go has many solutions ready for creating
+actors, and you can do this with the
+
+2
+00:00:15,450 --> 00:00:20,029
+goroutines. And if you look at this
+example here, we have a very simple
+
+3
+00:00:20,092 --> 00:00:22,060
+goroutine with a ping and a pong.
+
+4
+00:00:22,620 --> 00:00:29,358
+And so what happens is we use this
+actor specification and overload it into
+
+5
+00:00:29,427 --> 00:00:34,565
+the goroutines, and it makes it very
+simple to communicate and send messages.
+
+6
+00:00:34,565 --> 00:00:39,285
+So let's go ahead and get started here
+with taking a look at what this demo would
+
+7
+00:00:39,285 --> 00:00:43,895
+be. So in order to do that, all we have
+to do is open up our code here and look at
+
+8
+00:00:43,952 --> 00:00:49,035
+this make file And this makefile has lots
+of examples of the different interactions
+
+9
+00:00:49,098 --> 00:00:51,797
+we can do. First step, we have a test.
+
+10
+00:00:51,797 --> 00:00:56,051
+It's always a good idea to start with
+tests in this case, we do go test as you
+
+11
+00:00:56,105 --> 00:00:58,054
+go to get started with your code here.
+
+12
+00:00:58,520 --> 00:01:00,989
+And this goes through and
+runs all of the tests.
+
+13
+00:01:00,989 --> 00:01:03,560
+We have build, which allows
+us to build a project.
+
+14
+00:01:03,560 --> 00:01:08,946
+So you type in gobuild-o, and this is the
+output is there's been ping pong to run
+
+15
+00:01:08,946 --> 00:01:15,803
+it? We just type in Go Run into Lintet we
+lintet here with make lens, make coverage,
+
+16
+00:01:15,874 --> 00:01:20,560
+make clean et cetera. Now we can also
+go through here and run the help menu.
+
+17
+00:01:21,040 --> 00:01:24,912
+So we type in Make Help Helm,
+This gives us all the commands.
+
+18
+00:01:24,912 --> 00:01:27,727
+So we can go ahead and
+type in make test, right?
+
+19
+00:01:27,727 --> 00:01:32,059
+We see the examples here. And if we wanna
+go ahead say make build, we can build a
+
+20
+00:01:32,117 --> 00:01:37,180
+project. This gives this a very simple
+executable and then if you wanna go head
+
+21
+00:01:37,246 --> 00:01:41,020
+and walk through the code we can
+actually take a look at how this works.
+
+22
+00:01:41,020 --> 00:01:45,498
+First step here, the main is the entry
+point there's a function here or enter
+
+23
+00:01:45,556 --> 00:01:50,403
+point there is a function that shows us
+a print statement, also a ping and appong
+
+24
+00:01:50,464 --> 00:01:55,377
+here. So we just type in make and we're
+able to overload this channel here to get
+
+25
+00:01:55,438 --> 00:01:58,097
+this power of the actors
+protocol built in.
+
+26
+00:01:58,097 --> 00:02:02,948
+So this channel provides a mechanism for
+concurrent executing functions to send and
+
+27
+00:02:02,948 --> 00:02:07,660
+receive so it fits really well with
+what you have, so that's really good.
+
+28
+00:02:08,240 --> 00:02:11,534
+the actor specification here, and
+then here we have the message.
+
+29
+00:02:11,534 --> 00:02:15,886
+Now in order to use this, we're going
+to have to go back to our simple here.
+
+30
+00:02:15,886 --> 00:02:19,139
+This is where all the logic is kept.
+
+31
+00:02:19,139 --> 00:02:23,617
+Go is very straightforward; look at it,
+there's an implementation interface here
+
+32
+00:02:23,617 --> 00:02:30,559
+that type and this also has a function
+which has a simple ping pong and this
+
+33
+00:02:30,647 --> 00:02:34,788
+ping pong here has a message right here.
+
+34
+00:02:34,788 --> 00:02:41,160
+And we also have a weight
+group, and we have a mutex.
+
+35
+00:02:41,160 --> 00:02:47,732
+So this allows us to make
+our actor based simulation.
+
+36
+00:02:47,732 --> 00:02:54,454
+Here, we have the function
+that goes through and does the
+
+37
+00:02:54,572 --> 00:03:01,394
+wait for the pong, and then Now, if we
+want to take a look at the test here, the
+
+38
+00:03:01,459 --> 00:03:03,526
+test is also pretty straightforward.
+
+39
+00:03:03,526 --> 00:03:06,307
+It's a good idea to
+start first with tests.
+
+40
+00:03:06,307 --> 00:03:11,289
+In this case we see that this is given two
+actors for ping-pong exchange and these
+
+41
+00:03:11,349 --> 00:03:16,620
+are the messages right here and then
+exactly six messages should be exchanged
+
+42
+00:03:17,140 --> 00:03:22,753
+and then we also have a message ordering
+test as well, given And then we have the
+
+43
+00:03:22,801 --> 00:03:26,911
+deterministic behavior. And we also
+have a performance test here, to your.
+
+44
+00:03:26,911 --> 00:03:27,811
+.
+

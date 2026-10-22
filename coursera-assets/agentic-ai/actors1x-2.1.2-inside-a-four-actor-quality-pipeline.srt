@@ -1,0 +1,248 @@
+1
+00:00:09,540 --> 00:00:15,376
+One issue with non-deterministic AI agents
+is that they can corrupt state, they can
+
+2
+00:00:15,435 --> 00:00:20,103
+crash in production and this is going to
+cause things like infinite retry loops.
+
+3
+00:00:20,103 --> 00:00:25,054
+And if you look at distributed computing
+in general, it's one of the most difficult
+
+4
+00:00:25,054 --> 00:00:31,428
+things to get correct. PMAT
+solves this with Rust actor model.
+
+5
+00:00:31,428 --> 00:00:37,140
+In this case, a mailbox isolation and
+supervision trees ought to recover from
+
+6
+00:00:37,200 --> 00:00:41,370
+crashes. And then event sourcing
+enables time travel debugging.
+
+7
+00:00:41,370 --> 00:00:46,666
+So if you look at some of the things that
+happen here, this allows you to work with
+
+8
+00:00:46,736 --> 00:00:52,843
+Claude Code and build subagents that
+neatly enforce quality with zero
+
+9
+00:00:52,924 --> 00:00:58,492
+self-admitted technical debt, low
+complexity, looking at graph metrics et
+
+10
+00:00:58,548 --> 00:01:02,297
+cetera. And this is an architecture
+that many agents will start adopting.
+
+11
+00:01:02,297 --> 00:01:06,907
+So if we take a look at this diagram here,
+we can see that at the very beginning, we
+
+12
+00:01:06,907 --> 00:01:08,868
+have things like actor isolation.
+
+13
+00:01:08,868 --> 00:01:10,509
+There's four specialized actors.
+
+14
+00:01:10,509 --> 00:01:13,740
+There is zero shared state. We
+have a central registry as well.
+
+15
+00:01:13,740 --> 00:01:18,149
+We also have a structure where local
+failures don't cascade and they safe
+
+16
+00:01:18,213 --> 00:01:22,370
+stabilize, stabilize them and then save
+the rest of the day for sale in real-time
+
+17
+00:01:22,420 --> 00:01:24,112
+sales, so we can start with that.
+
+18
+00:01:24,440 --> 00:01:29,110
+through supervision trees. We also see
+that there's event sourcing, so every
+
+19
+00:01:29,166 --> 00:01:33,510
+state change is logged and you can have
+deterministic replay for debugging.
+
+20
+00:01:33,510 --> 00:01:37,640
+And then in terms of the agents, as you
+build more and more subagents which this
+
+21
+00:01:37,640 --> 00:01:42,991
+architecture is becoming more prevalent
+you wanna have O to the one actor lookup.
+
+22
+00:01:42,991 --> 00:01:49,090
+You also wanna have zero copy
+semantics so also bounded channels.
+
+23
+00:01:49,090 --> 00:01:54,029
+So for example, a 10,000 message mailbox
+capacity so that you don't exhaust memory
+
+24
+00:01:54,029 --> 00:01:56,163
+and then you have raft consensus.
+
+25
+00:01:56,163 --> 00:02:00,220
+And this is a three node minimum
+for distributed coordination.
+
+26
+00:02:00,220 --> 00:02:05,023
+So we have a leader, you have a couple
+followers and this is an architecture that
+
+27
+00:02:05,109 --> 00:02:11,980
+is well suited to subagents in terms of
+the actual functionality of the sub agents
+
+28
+00:02:12,380 --> 00:02:17,113
+We have a tree sitting, a parsing actor
+that can look through lines of code at
+
+29
+00:02:17,113 --> 00:02:20,040
+hundreds of thousands of lines per second.
+
+30
+00:02:20,440 --> 00:02:23,660
+We also have the ability to
+look at complexity metrics.
+
+31
+00:02:23,660 --> 00:02:29,100
+So the McCabe cyclomatic complexity
+and also Halstead cognitive complexity.
+
+32
+00:02:29,100 --> 00:02:34,579
+And if you look at this, it's done in a
+single AST pass we also have measures of
+
+33
+00:02:34,579 --> 00:02:38,921
+Shannon entropy so. . It measures
+code randomness for refactoring.
+
+34
+00:02:38,921 --> 00:02:44,240
+So this is what's really important about
+this subagent architecture, is that as
+
+35
+00:02:44,292 --> 00:02:48,947
+you're coding, you can have each of
+these subagents maybe language specific
+
+36
+00:02:49,005 --> 00:02:53,875
+subagents or entropy specific subagents
+or complexity specific subspaces and they
+
+37
+00:02:53,940 --> 00:02:58,680
+could be giving you feedback and saying
+look this part of the code needs to be
+
+38
+00:02:58,732 --> 00:03:03,883
+addressed. You just made a change where,
+this subcomponent has an issue, here's a
+
+39
+00:03:03,951 --> 00:03:09,961
+recommended fix. And this is a very
+interesting way to develop software with
+
+40
+00:03:10,022 --> 00:03:14,880
+subagent as a signal that the main agent,
+maybe it's Claude Code, maybe its Gemini
+
+41
+00:03:14,936 --> 00:03:19,654
+and maybe some other tool in the future is
+able to interpret those signals and make
+
+42
+00:03:19,725 --> 00:03:25,993
+informed decisions. Another place that you
+could look for this is a validator actor.
+
+43
+00:03:25,993 --> 00:03:30,150
+In this case, the subagent could
+be enforcing a score for code.
+
+44
+00:03:30,150 --> 00:03:34,557
+For example, it needs to be
+specific measurement of quality.
+
+45
+00:03:34,557 --> 00:03:40,323
+You could also do parallel validation so
+looking at lots of different files at the
+
+46
+00:03:40,404 --> 00:03:44,782
+same times and even generating
+an auto fix suggestion.
+
+47
+00:03:44,782 --> 00:03:51,484
+And also when you're looking at the entire
+system, what's the ability to orchestrate
+
+48
+00:03:51,548 --> 00:03:56,228
+and look at the metrics that are coming
+across while all of this is happening.
+
+49
+00:03:56,228 --> 00:04:03,109
+So really in a nutshell,
+The PMAT architecture is a
+
+50
+00:04:03,284 --> 00:04:10,137
+good example of some of the things that
+
+51
+00:04:10,313 --> 00:04:11,213
+are
+

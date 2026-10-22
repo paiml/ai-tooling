@@ -1,0 +1,147 @@
+1
+00:00:09,720 --> 00:00:16,020
+Unlike Erlang's automatic supervision
+trees, Actix provides only two primitives.
+
+2
+00:00:16,380 --> 00:00:21,720
+CTX Watch to monitor actors and
+terminated messages when they die.
+
+3
+00:00:22,420 --> 00:00:26,425
+You must manually implement restart
+strategies, cascade handling and failure
+
+4
+00:00:26,425 --> 00:00:32,151
+recovery. This diagram shows the three
+step process watch children in primitive
+
+5
+00:00:32,227 --> 00:00:38,188
+environments receive termination notices
+and execute restart logic, all code you
+
+6
+00:00:38,257 --> 00:00:44,075
+write yourself. If you look at this,
+you can see that Actix has no built-in
+
+7
+00:00:44,142 --> 00:00:50,455
+supervision unlike Erlang or Elixir but it
+does contain the primitives and you have
+
+8
+00:00:50,564 --> 00:00:55,157
+to control this with watch and terminated.
+
+9
+00:00:55,157 --> 00:01:00,475
+If we look at how Supervisor calls, child
+and also a failed child would trigger the
+
+10
+00:01:00,518 --> 00:01:04,518
+terminated message. And then your code
+would then decide the restart strategy.
+
+11
+00:01:04,518 --> 00:01:08,312
+So all actors run in a single arbiter,
+a thread event loop, and there's no
+
+12
+00:01:08,312 --> 00:01:12,415
+automatic cascading like or laying so you
+can do the same thing you just have to
+
+13
+00:01:12,415 --> 00:01:14,261
+decide how you want to implement it.
+
+14
+00:01:14,261 --> 00:01:17,030
+If we look at the code
+implementation here are laying.
+
+15
+00:01:17,030 --> 00:01:21,082
+So you can Do the same things You just
+have To decide how You want to Implement
+
+16
+00:01:21,082 --> 00:01:24,159
+it if We can see that the store
+children is in the hash map.
+
+17
+00:01:24,159 --> 00:01:28,364
+We have an actor ID and an address, then
+we have started which creates and watches
+
+18
+00:01:28,364 --> 00:01:30,633
+the children for handler terminated.
+
+19
+00:01:30,633 --> 00:01:35,084
+This is where the restart logic lies and
+then you have to match on this strategy
+
+20
+00:01:35,140 --> 00:01:39,901
+one for one, one for all rest four won And
+then you must manually watch new children.
+
+21
+00:01:39,901 --> 00:01:44,106
+So some of the limitations are that that
+are there that we have to make sure we're
+
+22
+00:01:44,106 --> 00:01:47,055
+doing it right. There is no
+restart intensity period.
+
+23
+00:01:47,055 --> 00:01:51,529
+There are no automatic supervision
+hierarchies, and there's no built-in air
+
+24
+00:01:51,589 --> 00:01:55,624
+recovery circuit breakers. You build
+them back off, you also code them.
+
+25
+00:01:55,624 --> 00:02:00,665
+So the key takeaways are that with Actix
+you have to implement it yourself but with
+
+26
+00:02:00,665 --> 00:02:03,772
+Erlang you have your complete
+supervision framework.
+
+27
+00:02:03,772 --> 00:02:06,849
+So there are some trade-offs
+here or a supervisor framework.
+
+28
+00:02:07,280 --> 00:02:12,764
+in that the performance that you get with
+raw rust is amazing, but you do get some
+
+29
+00:02:12,764 --> 00:02:17,904
+convenience from Erlang. And so you have
+to build a little bit of boilerplate to
+
+30
+00:02:17,956 --> 00:02:24,820
+get the same things. But
+fortunately those capabilities in
+

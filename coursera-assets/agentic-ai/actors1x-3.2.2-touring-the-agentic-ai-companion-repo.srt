@@ -1,0 +1,242 @@
+1
+00:00:10,320 --> 00:00:15,653
+Let's take a look at a repo that has many
+of the core architectural lessons from
+
+2
+00:00:15,653 --> 00:00:21,351
+this course inside of it. First, let's
+review the core concepts we talk about
+
+3
+00:00:21,403 --> 00:00:27,398
+actor models. This is zero shared memory,
+five full mailboxes location transparency.
+
+4
+00:00:27,398 --> 00:00:31,906
+It's been used with high performance
+systems like WhatsApp and it's also
+
+5
+00:00:31,968 --> 00:00:36,331
+suitable for what app and it is
+also suitable agent to coding.
+
+6
+00:00:36,331 --> 00:00:42,105
+PMAT allows you to do quality enforcement,
+these kinds of tools that create quality
+
+7
+00:00:42,105 --> 00:00:47,153
+gates allow for zero tolerance policy so
+you constrict what an agent can do and
+
+8
+00:00:47,216 --> 00:00:49,599
+this allows you make
+more deterministic code.
+
+9
+00:00:49,599 --> 00:00:55,166
+We also talked about small language models
+win in the case of a small language model
+
+10
+00:00:55,166 --> 00:01:00,678
+the cost is much much as much as a smaller
+lower, it could be 1%, 10 to 30 times
+
+11
+00:01:00,745 --> 00:01:05,306
+faster inference. Also on device
+deployment, task specific fine tuning and
+
+12
+00:01:05,367 --> 00:01:09,037
+deterministic outputs in terms
+of cost per decision as well.
+
+13
+00:01:09,037 --> 00:01:13,755
+This is something to consider what
+kinds of problems are you solving?
+
+14
+00:01:13,755 --> 00:01:18,435
+Are you solving because you want a large
+model or are you solve because You want a
+
+15
+00:01:18,435 --> 00:01:23,301
+cost, costs deployment, tasks specific
+fine-tuning and determinist factor to be
+
+16
+00:01:23,353 --> 00:01:28,112
+played into your decision. And we think
+about let it crash philosophy, this is
+
+17
+00:01:28,179 --> 00:01:32,871
+something that Erlang pioneered but it
+works very well for agents and then in
+
+18
+00:01:32,929 --> 00:01:37,541
+terms of some of the emerging tools like
+Claude code subagents, we talked about
+
+19
+00:01:37,601 --> 00:01:43,794
+main agent could be a Clippy fix
+and task generation in doc update
+
+20
+00:01:43,886 --> 00:01:48,818
+supervision. And you can have
+specific models, they're isolated.
+
+21
+00:01:48,818 --> 00:01:54,044
+There's tool filtering. And then in terms
+of Omdel's law for agents as well, we know
+
+22
+00:01:54,097 --> 00:01:57,673
+that human attention plays a big
+role and this is the bottleneck.
+
+23
+00:01:57,673 --> 00:02:01,751
+And in terms what wins? We see that
+the scope is a big issue because of the
+
+24
+00:02:01,798 --> 00:02:06,320
+Floridi conjecture. AGI doesn't seem like
+it's likely instead we want certainty, we
+
+25
+00:02:06,378 --> 00:02:08,173
+want things like. . we want things.
+
+26
+00:02:08,173 --> 00:02:12,544
+. we need to have something specific and
+then in order small language models and
+
+27
+00:02:12,608 --> 00:02:17,565
+calculators. And so the formula here
+is looking at these small and efficient
+
+28
+00:02:17,632 --> 00:02:23,220
+language models. So let's go ahead and
+take a look now at the code in this repo
+
+29
+00:02:23,350 --> 00:02:30,236
+from pragmatic labs called
+agentic AI, we have a Deno
+
+30
+00:02:30,366 --> 00:02:36,680
+actor example Go actors example,
+Ruchy actors and Rust Actors.
+
+31
+00:02:37,160 --> 00:02:42,167
+The idea here is that you can start
+from a very simple workflow, you can do
+
+32
+00:02:42,221 --> 00:02:44,080
+everything inside of this project.
+
+33
+00:02:44,080 --> 00:02:48,173
+You can say make tests, make build,
+make run, make clean and help.
+
+34
+00:02:48,173 --> 00:02:53,759
+And this works at the root via this Make
+file and it also does the same pattern for
+
+35
+00:02:53,759 --> 00:02:58,040
+each of the code examples. So if you
+wanted to take a look at Rust Actors for
+
+36
+00:02:58,099 --> 00:03:03,017
+example. . For example, you're also gonna
+get a readme file that tells you how to
+
+37
+00:03:03,074 --> 00:03:08,034
+use it. We're also going to look at a
+makefile, and then we're also are gonna be
+
+38
+00:03:08,097 --> 00:03:11,648
+able to look the code ourselves
+and implement the solutions.
+
+39
+00:03:11,648 --> 00:03:17,153
+So what's nice about this particular repo
+is it starts with the core foundations of
+
+40
+00:03:17,153 --> 00:03:22,053
+actors which is something that is gonna
+play a role in the future with where it
+
+41
+00:03:22,108 --> 00:03:27,101
+starts agent of coding, and then it goes
+to a supervised example at the very end,
+
+42
+00:03:27,155 --> 00:03:29,956
+which is the advanced
+supervision calculator.
+
+43
+00:03:29,956 --> 00:03:34,808
+And this is a go example that uses Erlang
+style supervision with crash recovery does
+
+44
+00:03:34,808 --> 00:03:36,500
+this because it uses Go channels.
+
+45
+00:03:36,500 --> 00:03:39,379
+You can take a look at
+that example as well.
+
+46
+00:03:39,379 --> 00:03:43,515
+So this repo is a great place to get
+started with, where the very ends which
+
+47
+00:03:43,569 --> 00:03:48,584
+are the advanced some of the things that
+you're gonna do when you're coding with
+
+48
+00:03:48,640 --> 00:03:51,050
+agent tools, go ahead
+and try some of examples.
+
+49
+00:03:51,050 --> 00:03:54,240
+Fork this repo and make your
+own agentic future agents.
+

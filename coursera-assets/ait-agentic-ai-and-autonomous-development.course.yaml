@@ -59,7 +59,7 @@ video_dir: coursera-assets/rendered/agentic-ai
 videos:
 # ───────────────────────── Module 1: Actor model foundations ─────────────────────────
 - content_mode: demo
-  id: 1.0-course-intro
+  id: actors1x-1.1.1-cheaper-deterministic-agents-course-roadmap
   module: 'Module 1: Actor Model Foundations'
   title: Course Intro
   subtitle: Why agents with extreme API costs need a different architecture
@@ -71,7 +71,7 @@ videos:
   - Start from the principle, then look at the math
 
 - content_mode: demo
-  id: 1.3-what-is-actor-paradigm
+  id: actors1x-1.1.2-actors-mailboxes-isolation-zero-shared-memory
   module: 'Module 1: Actor Model Foundations'
   title: What Is the Actor Paradigm
   subtitle: Isolated processes, mailboxes, zero shared memory
@@ -84,7 +84,7 @@ videos:
   - Small teams scale when the paradigm does the coordination
 
 - content_mode: demo
-  id: 1.5-actix-supervision-trees-rust
+  id: actors1x-1.2.1-actix-supervision-you-build-yourself
   module: 'Module 1: Actor Model Foundations'
   title: Actix Supervision Trees in Rust
   subtitle: Restart strategy is code you write yourself
@@ -97,7 +97,7 @@ videos:
   - The terminated message is where the restart decision lives
 
 - content_mode: demo
-  id: 1.6-location-transparency
+  id: actors1x-1.2.2-one-api-from-laptop-to-cluster
   module: 'Module 1: Actor Model Foundations'
   title: Location Transparency
   subtitle: One API from local to global
@@ -111,7 +111,7 @@ videos:
 
 # ───────────────────────── Module 2: Subagent architecture ─────────────────────────
 - content_mode: demo
-  id: 2.2-claude-subagents
+  id: actors1x-2.1.1-configuring-claude-subagents-isolated-tools
   module: 'Module 2: Subagent Architecture'
   title: Claude Subagents
   subtitle: Task-specific agents with isolated state and tool access
@@ -124,7 +124,7 @@ videos:
   - Configuration, not prompting, decides which agent takes the task
 
 - content_mode: demo
-  id: 2.3-pmat-sub-agent-architecture
+  id: actors1x-2.1.2-inside-a-four-actor-quality-pipeline
   module: 'Module 2: Subagent Architecture'
   title: PMAT Subagent Architecture
   subtitle: Mailbox isolation, supervision trees, event sourcing
@@ -137,7 +137,7 @@ videos:
   - Quality enforcement means zero self-emitted technical debt
 
 - content_mode: demo
-  id: 2.4-clippy-sub-agent
+  id: actors1x-2.1.3-a-warning-fixer-that-does-one-thing
   module: 'Module 2: Subagent Architecture'
   title: The Clippy Subagent
   subtitle: A subagent that does exactly one thing
@@ -150,7 +150,7 @@ videos:
   - Solve a specific problem, not everything
 
 - content_mode: demo
-  id: 2.5-supervized-multiple-agents
+  id: actors1x-2.2.1-a-supervisor-routing-to-two-specialists
   module: 'Module 2: Subagent Architecture'
   title: Supervised Multiple Agents
   subtitle: One supervisor and two specialist subagents
@@ -163,7 +163,7 @@ videos:
   - Visibility into each subagent supports the person supervising
 
 - content_mode: demo
-  id: 2.6-amdahls-law-subagents
+  id: actors1x-2.2.2-human-attention-as-the-amdahl-bottleneck
   module: 'Module 2: Subagent Architecture'
   title: Amdahl's Law for Subagents
   subtitle: Why more cores and more agents give diminishing returns
@@ -176,7 +176,7 @@ videos:
   - More agents will not beat the part that cannot be parallelized
 
 - content_mode: demo
-  id: 2.7-simple-agents-win
+  id: actors1x-2.2.3-small-dumb-agents-beat-agi-ambitions
   module: 'Module 2: Subagent Architecture'
   title: Simple Agents Win
   subtitle: Human attention as the bottleneck
@@ -189,7 +189,7 @@ videos:
   - Small, specific tasks are the sweet spot for agents
 
 - content_mode: demo
-  id: 2.8-slm
+  id: actors1x-2.2.4-small-models-and-the-scope-certainty-trade
   module: 'Module 2: Subagent Architecture'
   title: Small Language Models
   subtitle: Scope versus certainty
@@ -203,7 +203,7 @@ videos:
 
 # ───────────────────────── Module 3: Multi-language actor demos ─────────────────────────
 - content_mode: demo
-  id: 3.2-deno-actor-demo
+  id: actors1x-3.1.1-ping-pong-with-deno-async-channels
   module: 'Module 3: Multi-Language Actor Demos'
   title: Deno Actor Demo
   subtitle: A scripting actor that pings and pongs
@@ -216,7 +216,7 @@ videos:
   - The Makefile is the map of what the project does
 
 - content_mode: demo
-  id: 3.3-go-actor-demo
+  id: actors1x-3.1.2-ping-pong-with-go-goroutines
   module: 'Module 3: Multi-Language Actor Demos'
   title: Go Actor Demo
   subtitle: Goroutines as actors
@@ -229,7 +229,7 @@ videos:
   - Start with tests
 
 - content_mode: demo
-  id: 3.4-rust-actor-demo
+  id: actors1x-3.1.3-ping-pong-with-rust-threads
   module: 'Module 3: Multi-Language Actor Demos'
   title: Rust Actor Demo
   subtitle: Channels and mailboxes in Rust
@@ -242,7 +242,7 @@ videos:
   - A Makefile documents what the project can do
 
 - content_mode: demo
-  id: 3.5-go-supervisor-demo
+  id: actors1x-3.2.1-go-supervisor-restarting-adder-and-multiplier
   module: 'Module 3: Multi-Language Actor Demos'
   title: Go Supervisor Demo
   subtitle: A calculator supervisor with an adder and a multiplier
@@ -255,7 +255,7 @@ videos:
   - A restart budget stops infinite retry loops
 
 - content_mode: demo
-  id: 3.6-agentic-coding-project-repo
+  id: actors1x-3.2.2-touring-the-agentic-ai-companion-repo
   module: 'Module 3: Multi-Language Actor Demos'
   title: The Agentic Coding Project Repo
   subtitle: The course's architectural lessons in one repository

@@ -1,0 +1,204 @@
+1
+00:00:09,760 --> 00:00:14,265
+A powerful pattern with Agentec AI is to
+use these small single purpose agents.
+
+2
+00:00:14,265 --> 00:00:18,076
+These agents are efficient,
+they're easy to keep track of.
+
+3
+00:00:18,076 --> 00:00:23,191
+They have a very small scope as well we
+know that with the Floridi conjecture that
+
+4
+00:00:23,191 --> 00:00:27,817
+we get better outcomes with smaller scope,
+they have a smaller scope as you can see
+
+5
+00:00:27,817 --> 00:00:32,361
+here in the video. And if we look at this
+particular example, it could be in any
+
+6
+00:00:32,412 --> 00:00:36,361
+language but we're using Go and it
+demonstrates a supervisor pattern with two
+
+7
+00:00:36,361 --> 00:00:41,950
+workers. An adder and a multiplier that
+process arithmetic operations through
+
+8
+00:00:42,020 --> 00:00:47,929
+message passing channels. And each actor
+detects overflow conditions that trigger
+
+9
+00:00:48,007 --> 00:00:53,674
+self termination also simulates real world
+failures like integer overflow, and the
+
+10
+00:00:53,737 --> 00:00:59,259
+calculator supervisor implements a
+one-for-one restart strategy with a budget
+
+11
+00:00:59,310 --> 00:01:04,643
+of three restarts per minute. And when an
+actor crashes or times out, the supervisor
+
+12
+00:01:04,709 --> 00:01:09,160
+immediately spawns a replacement
+until the budget is exhausted.
+
+13
+00:01:09,580 --> 00:01:14,715
+So this kind of pattern is essential with
+the future of small language model agentic
+
+14
+00:01:14,769 --> 00:01:20,212
+coding, codeine coding. Let's go ahead and
+take a look at what this looks like inside
+
+15
+00:01:20,273 --> 00:01:25,089
+of code. Here we have a project and first
+we have make file, and make file is a good
+
+16
+00:01:25,147 --> 00:01:28,589
+place to take a Look at all
+the actions that are occurring.
+
+17
+00:01:28,589 --> 00:01:30,640
+For example, We can test our code right?
+
+18
+00:01:30,640 --> 00:01:34,294
+Make tests. We can also build
+our code run our code lintercode.
+
+19
+00:01:34,294 --> 00:01:39,396
+And if we look at calculator go here, this
+is where we have all of the live a lot of
+
+20
+00:01:39,396 --> 00:01:44,360
+the log on there and then you'll
+see So we import format, math, sync.
+
+21
+00:01:44,840 --> 00:01:50,023
+We look at the types here. We have a
+response or request and adder and then in
+
+22
+00:01:50,074 --> 00:01:53,600
+terms of the functions we
+have new adder right here.
+
+23
+00:01:53,600 --> 00:01:59,659
+You have as well the ability to run it we
+also have a type which is a multiplier we
+
+24
+00:01:59,729 --> 00:02:05,294
+have the ability do funk new multiplier
+and we also had the ability To run that
+
+25
+00:02:05,375 --> 00:02:11,126
+calculator as well, And again, we have a
+new calculator function and we have the
+
+26
+00:02:11,189 --> 00:02:14,682
+ability to start it and also
+to supervise it into add.
+
+27
+00:02:14,682 --> 00:02:19,251
+Right? So we have all of the logic
+encapsulated inside of this calc dot go.
+
+28
+00:02:19,251 --> 00:02:24,874
+And then in terms of where we run it, we
+Have the entry point main dot go and this
+
+29
+00:02:24,874 --> 00:02:27,938
+point is where We print
+out what's happening.
+
+30
+00:02:27,938 --> 00:02:34,913
+We have a basic demo in this case, these
+are the basic operations We also have
+
+31
+00:02:35,110 --> 00:02:41,833
+a recovery here as well that shows
+
+32
+00:02:42,031 --> 00:02:48,753
+some of the things you can do in a
+
+33
+00:02:48,753 --> 00:02:54,040
+supervised In this case,
+we have an overflow.
+
+34
+00:02:54,040 --> 00:02:55,880
+We also have a cascade failure.
+
+35
+00:02:55,880 --> 00:02:57,780
+We have budget exhaustion, et cetera.
+
+36
+00:02:58,260 --> 00:03:03,190
+And then in terms of what we're doing to
+run this you can just take a look at the
+
+37
+00:03:03,190 --> 00:03:06,523
+README and it explains all the
+different actions that take place.
+
+38
+00:03:06,523 --> 00:03:10,703
+So this is a pretty good example if you
+wanna take a little bit how GO could
+
+39
+00:03:10,703 --> 00:03:13,720
+implement agentic coding environments.
+
+40
+00:03:14,160 --> 00:03:18,416
+This is a great way to take a look at how
+to build your own patterns inside of your
+
+41
+00:03:18,416 --> 00:03:23,670
+own project. You can pull this down from
+agentic-ai and you can run this yourself
+
+42
+00:03:23,733 --> 00:03:26,980
+using the Go language which
+you use in the Go Language.
+

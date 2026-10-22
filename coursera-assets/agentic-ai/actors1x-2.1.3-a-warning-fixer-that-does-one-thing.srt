@@ -1,0 +1,165 @@
+1
+00:00:09,600 --> 00:00:12,380
+Subagents excel when they
+do exactly one thing.
+
+2
+00:00:12,740 --> 00:00:18,162
+This is an emerging trend with autonomous
+systems, and a way to think about it is a
+
+3
+00:00:18,223 --> 00:00:22,563
+surgical instrument designed for a
+very specific procedure, and it's
+
+4
+00:00:22,626 --> 00:00:27,411
+specialization that makes things that
+are more non-deterministic into a more
+
+5
+00:00:27,476 --> 00:00:34,214
+deterministic focus because the subagent
+only handles a certain type of data.
+
+6
+00:00:34,214 --> 00:00:40,252
+And this is really a critical pattern that
+makes subagents more like DevOps build
+
+7
+00:00:40,252 --> 00:00:45,927
+systems versus this AGI fantasy where
+everything is solvable, we're actually
+
+8
+00:00:46,002 --> 00:00:51,002
+trying to solve only a very specific
+problem and each subagent operates on an
+
+9
+00:00:51,067 --> 00:00:53,636
+isolated and deterministic black box.
+
+10
+00:00:53,636 --> 00:00:58,729
+So corrupted inputs aren't going to crash
+the system because this agent only handles
+
+11
+00:00:58,729 --> 00:01:03,464
+a certain type of payload and this
+containment is what makes it actually
+
+12
+00:01:03,529 --> 00:01:07,876
+pretty useful. So if we look at
+specialization here, it means that you
+
+13
+00:01:07,941 --> 00:01:13,698
+have testable boundaries, the inputs
+and the outputs are very clear.
+
+14
+00:01:13,698 --> 00:01:20,096
+Clippy for example from cargo, it gives
+you and you can take that clippy feedback,
+
+15
+00:01:20,148 --> 00:01:22,489
+which is structured and
+do something with it.
+
+16
+00:01:22,489 --> 00:01:27,005
+That's all it does. If we look at a
+deterministic replay, you can get the same
+
+17
+00:01:27,058 --> 00:01:30,853
+warning and always produce the same
+fix and this is gonna enable a perfect
+
+18
+00:01:30,853 --> 00:01:32,648
+debugging in verification workflow.
+
+19
+00:01:32,648 --> 00:01:37,021
+Again, a lot like build system except for
+where it has few extra components and if
+
+20
+00:01:37,021 --> 00:01:42,084
+we look composition over complexity you
+could chain or chain replace that with
+
+21
+00:01:42,084 --> 00:01:47,942
+something else. 10 simple agents together,
+instead of building this AGI super
+
+22
+00:01:48,019 --> 00:01:51,280
+monstrosity that doesn't always work well.
+
+23
+00:01:51,280 --> 00:01:55,723
+In the case of a simple agent, you can
+solve one particular problem and with
+
+24
+00:01:55,782 --> 00:02:01,298
+fault isolation as well. You can actually
+focus just on that particular warning and
+
+25
+00:02:01,360 --> 00:02:06,114
+then in terms of resources each agent gets
+its own thread, its own memory limit at
+
+26
+00:02:06,173 --> 00:02:10,846
+it's time out. And also you have the
+ability to do version independence as
+
+27
+00:02:10,905 --> 00:02:15,108
+well. So you could update a TypeScript
+agent or a Rust agent, or some other
+
+28
+00:02:15,165 --> 00:02:20,182
+language agent. And then in terms of
+scaling, you could scale maybe 100 of
+
+29
+00:02:20,245 --> 00:02:23,880
+these to fix 100 files simultaneously
+
+30
+00:02:23,880 --> 00:02:30,439
+instead that it's going
+to have lots of different
+
+31
+00:02:30,492 --> 00:02:34,095
+solutions and have a very
+non-deterministic behavior.
+
+32
+00:02:34,095 --> 00:02:39,505
+So this could be the future of what we're
+gonna see are these specialized subagents
+
+33
+00:02:39,505 --> 00:02:43,402
+that aren't intelligent, they're just
+useful because they solve a particular
+
+34
+00:02:43,440 --> 00:02:44,340
+problem well.
+

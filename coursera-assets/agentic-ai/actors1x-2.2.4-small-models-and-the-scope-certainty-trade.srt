@@ -1,0 +1,133 @@
+1
+00:00:09,640 --> 00:00:12,511
+Two mathematical laws prove
+why simple agents dominate.
+
+2
+00:00:12,511 --> 00:00:18,175
+Amdahl's law, which is human attention
+is the bottleneck in many scenarios with
+
+3
+00:00:18,247 --> 00:00:21,600
+agents because you have to pay
+attention to what's being built.
+
+4
+00:00:22,200 --> 00:00:25,884
+For example, if you have a coding
+assistant you also have a testing
+
+5
+00:00:25,942 --> 00:00:31,295
+assistant and a warnings assistant, the
+build assistant or read me et cetera et
+
+6
+00:00:31,370 --> 00:00:37,774
+cetera things can spiral out eventually
+there's going to be diminishing returns.
+
+7
+00:00:37,774 --> 00:00:43,057
+Likewise with Floridi's conjecture, you
+can't have both scope and certainty.
+
+8
+00:00:43,057 --> 00:00:48,121
+A great example is GPT-4 60%
+accuracy a calculators 100%.
+
+9
+00:00:48,121 --> 00:00:54,789
+Which one would you want? We
+want the scope of the calculator
+
+10
+00:00:54,903 --> 00:00:58,420
+because it has 100% arithmetic.
+
+11
+00:00:58,920 --> 00:01:04,388
+billion parameter small language model
+matches a $70 billion LLM at 10 to 30%
+
+12
+00:01:04,459 --> 00:01:06,275
+speed and also 1% of the cost.
+
+13
+00:01:06,275 --> 00:01:12,067
+The result here is that you could have
+many small language models beat these high
+
+14
+00:01:12,067 --> 00:01:17,500
+end LLMs and from a security standpoint,
+from a point of view, you could be able to
+
+15
+00:01:18,000 --> 00:01:22,074
+You have sovereignty as well. You don't
+have to worry about putting your model
+
+16
+00:01:22,127 --> 00:01:26,720
+inside of a large cloud. So the idea here
+is that with small models, there are win
+
+17
+00:01:26,778 --> 00:01:32,027
+when you have simple models, they're a win
+we eventually could see this future where
+
+18
+00:01:32,085 --> 00:01:35,476
+very simple systems outperform
+these large complex systems.
+
+19
+00:01:35,476 --> 00:01:41,862
+We see this with software engineering
+oftentimes times microservices are better
+
+20
+00:01:41,916 --> 00:01:43,625
+than the model of thick systems.
+
+21
+00:01:43,625 --> 00:01:48,412
+A lot of times when we look at the failure
+of AI projects, it could be because
+
+22
+00:01:48,412 --> 00:01:52,847
+they're believing the AGI narrative
+which has been proven to be false.
+
+23
+00:01:52,847 --> 00:01:58,282
+If we look a simple narrative where we're
+looking at mathematical laws like Amdahl's
+
+24
+00:01:58,343 --> 00:02:03,637
+law, Floridi's conjecture and looking at
+the data behind small and simple models of
+
+25
+00:02:03,705 --> 00:02:10,053
+AI systems, We see a pattern where we
+
+26
+00:02:10,258 --> 00:02:15,802
+could make AI projects more
+
+27
+00:02:16,007 --> 00:02:21,515
+successful. Unfortunately,
+
+28
+00:02:21,747 --> 00:02:24,300
+likely this
+

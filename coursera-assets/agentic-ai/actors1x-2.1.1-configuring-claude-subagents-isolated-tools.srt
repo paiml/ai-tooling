@@ -1,0 +1,198 @@
+1
+00:00:10,600 --> 00:00:14,817
+Claude Code subagents involve
+task specialization architectures.
+
+2
+00:00:14,817 --> 00:00:20,424
+If we look at why you would want a
+subagent, which is an emerging trend with
+
+3
+00:00:20,497 --> 00:00:27,456
+coding assistance, you can see that
+they enable task specific configurations
+
+4
+00:00:27,569 --> 00:00:34,361
+and with Claude Code in the
+session each is maintaining The
+
+5
+00:00:34,461 --> 00:00:40,776
+system then routes the task to
+the specialized agent based on a
+
+6
+00:00:40,876 --> 00:00:46,306
+configuration file, for
+example, dot-clawed agents.
+
+7
+00:00:46,306 --> 00:00:53,291
+A project specific or tilde slash
+dot-claude agents for user global
+
+8
+00:00:53,395 --> 00:00:57,000
+and each agent specifies as model tier.
+
+9
+00:00:57,360 --> 00:00:59,600
+with a very small dispatch overhead.
+
+10
+00:01:00,300 --> 00:01:06,539
+The agents cannot share memory or context
+directly, this requires explicit message
+
+11
+00:01:06,622 --> 00:01:08,780
+passing between execution boundaries.
+
+12
+00:01:08,780 --> 00:01:15,541
+So this is a killer feature of why agents
+fit very well with the actor protocol.
+
+13
+00:01:15,541 --> 00:01:20,369
+If we look at the technical
+characteristics we configuration
+
+14
+00:01:20,435 --> 00:01:22,440
+persistence, YAML, JSON files.
+
+15
+00:01:22,840 --> 00:01:28,131
+We also have tool filtering so agents can
+access a subset of available tools and
+
+16
+00:01:28,190 --> 00:01:33,975
+reduce operational scope. We'll also have
+the model flexibility so fixed assignment
+
+17
+00:01:34,061 --> 00:01:39,460
+for example maybe haiku or sonnet or opus
+or inherit from a parent and then this
+
+18
+00:01:39,516 --> 00:01:44,355
+execution isolation as well as well, as
+So no shared memory and then a priority
+
+19
+00:01:44,407 --> 00:01:47,278
+cascade. So a project agent
+could override a user agent.
+
+20
+00:01:47,278 --> 00:01:52,463
+You also have the ability to do parallel
+capacity, so 10 concurrent agents maximum
+
+21
+00:01:52,463 --> 00:01:57,034
+message ordering, context boundaries
+dispatch cost and state persistence.
+
+22
+00:01:57,034 --> 00:02:01,667
+These are all some of the things that you
+can configure or configure so it's not
+
+23
+00:02:01,667 --> 00:02:06,405
+just about your data collection, So in
+terms of the value, subagents really solve
+
+24
+00:02:06,460 --> 00:02:09,960
+the context pollution problem
+which is a big problem with agents.
+
+25
+00:02:09,960 --> 00:02:14,834
+If you're doing something in a
+long-running development session, things
+
+26
+00:02:14,897 --> 00:02:19,820
+can get convoluted but with a subagent, a
+single conversation could go through and
+
+27
+00:02:20,300 --> 00:02:23,784
+build a task generation or
+refactoring an analysis.
+
+28
+00:02:23,784 --> 00:02:25,800
+An analysis is the same as before.
+
+29
+00:02:26,220 --> 00:02:29,143
+And this subagent then
+compartmentalizes these workflows.
+
+30
+00:02:29,143 --> 00:02:33,451
+So you could have something that's always
+keeping your documentation up to date, and
+
+31
+00:02:33,451 --> 00:02:37,394
+this could be a cheap model. You could
+also have for example, a more complex
+
+32
+00:02:37,450 --> 00:02:42,042
+analysis happening with opus and then this
+isolation is gonna prevent the pollution
+
+33
+00:02:42,098 --> 00:02:45,055
+from having one thing
+pollute into another.
+
+34
+00:02:45,055 --> 00:02:49,609
+And then there's isolation is going
+to prevent the solution and you could
+
+35
+00:02:49,666 --> 00:02:52,920
+specifically architect your
+system to use these subagents.
+
+36
+00:02:52,920 --> 00:02:57,660
+So I think it is a very interesting
+workflow and it does have value, and some
+
+37
+00:02:57,722 --> 00:03:01,776
+of the things that you can do with
+sub-adjents really do make sense in the
+
+38
+00:03:01,831 --> 00:03:06,538
+concept of traditional DevOps workflows
+and traditional software engineering best
+
+39
+00:03:06,598 --> 00:03:11,739
+practices because they fit very well with
+modern systems administration, DevOps and
+
+40
+00:03:11,793 --> 00:03:14,058
+Kaizen approach of continuous improvement.
+
+41
+00:03:14,058 --> 00:03:14,958
+And
+
