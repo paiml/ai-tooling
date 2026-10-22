@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:10,000
+[MUSIC]
+
+2
+00:00:30,000 --> 00:00:37,453
+when they die, you must manually implement Rustart strategies, cascade handling and failure recovery.
+
+3
+00:00:37,453 --> 00:00:40,552
+This diagram shows the three step process.
+
+4
+00:00:40,552 --> 00:00:56,640
+Watch children receive termination notices and execute Rustart logic all code you write yourself if you look at this, You can see that Actix has no built-in supervision unlike or laying in a lickser but it does contain
+
+5
+00:01:00,000 --> 00:01:01,038
+and terminated.
+
+6
+00:01:01,038 --> 00:01:11,007
+If you look at how Supervisor calls, this is going to do a CTX watch on each child and also a failed child would trigger the terminated message.
+
+7
+00:01:11,007 --> 00:01:18,760
+And then your code within decide the Rustart strategy so all actors run in a single arbiter,a thread event loop.
+
+8
+00:01:18,760 --> 00:01:25,959
+And there's no automatic cascading like or lengths, so you can do the same thing you just have to decide
+
+9
+00:01:30,000 --> 00:01:39,000
+We can see that the store children is in the hash map. We have an acta ID and an address, then we have started which creates and watches the children or
+
+10
+00:01:40,000 --> 00:01:49,016
+Handler-triminated this is where the Rustart logic lies And then you have to match on a strategy one for one, one for all Rust for 1.
+
+11
+00:01:49,016 --> 00:01:52,000
+And then he must manually watch new children
+
+12
+00:02:00,000 --> 00:02:03,372
+And there's no built-in air recovery circuit breakers.
+
+13
+00:02:03,372 --> 00:02:06,120
+You build them back off, you also code them.
+
+14
+00:02:06,120 --> 00:02:14,738
+So the key takeaways are that with tactics, you have to implement it yourself but with Erlang, you've your complete supervision framework.
+
+15
+00:02:14,738 --> 00:02:28,040
+So there are some trade-offs here in that the performance that you get with raw rusts is amazing but you do get some convenience from Erleng and so you have build a little bit of boilerplate to get the same things
+
+16
+00:02:30,000 --> 00:02:34,000
+in terms of the primitives exist in the rust language.

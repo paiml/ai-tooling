@@ -1,0 +1,103 @@
+1
+00:00:00,000 --> 00:00:10,000
+[MUSIC]
+
+2
+00:00:18,600 --> 00:00:26,000
+A powerful pattern with Agentec AI is to use these small, single-purpose agents.
+
+3
+00:00:30,000 --> 00:00:32,365
+They have a very small scope as well.
+
+4
+00:00:32,365 --> 00:00:37,990
+We know that with the Florida conjecture that we get better outcomes with smaller scope.
+
+5
+00:00:37,990 --> 00:00:53,269
+If we look at this particular example, it could be in any language but we're using Go and it demonstrates a supervisor pattern with two workers and adder and a multiplier that process arithmetic operations through message passing channels.
+
+6
+00:00:53,269 --> 00:00:57,679
+Each actor detects overflow conditions that trigger self-trimination.
+
+7
+00:01:00,000 --> 00:01:09,747
+like integer overflow and the calculator supervisor implements a one for one Rustart strategy with a budget of three Rustarts per minute.
+
+8
+00:01:09,747 --> 00:01:18,000
+I want an actor crashes or times out, the supervisor immediately spawns a replacement until the budget is exhausted.
+
+9
+00:01:30,000 --> 00:01:32,826
+a project and first we have a make file.
+
+10
+00:01:32,826 --> 00:01:41,729
+And the make file is a good place to take look at all the actions that are occurring, for example, we can test our code right?
+
+11
+00:01:41,729 --> 00:01:42,435
+Make test.
+
+12
+00:01:42,435 --> 00:01:51,480
+We can also build our code run or code lintera-code and if we look at calculator go here this is where we have all of the logic.
+
+13
+00:01:51,480 --> 00:01:53,600
+So we import format math sync,
+
+14
+00:02:00,000 --> 00:02:02,111
+we have new adder right here.
+
+15
+00:02:02,111 --> 00:02:21,189
+We have as well the ability to run it, we also have a type which is a multiplier, we have the ability do funk new multiplier and we also had the ability To run the calculator as well and again, we Have a new calculator function and We have the billi to start it.
+
+16
+00:02:21,189 --> 00:02:24,320
+And also to supervisor it into add right so
+
+17
+00:02:30,000 --> 00:02:32,946
+of where we run it, we have the entry point main.
+
+18
+00:02:32,946 --> 00:02:36,374
+go and this point is where we print out what's happening.
+
+19
+00:02:36,374 --> 00:02:50,625
+We have a basic demo in this case these are the basic operations, we also have a recovery here as well that shows some of the things you can do in a supervised agent workflow and then finally at the very end, we had our performance test.
+
+20
+00:02:50,625 --> 00:02:56,338
+In terms of testing as well always a good idea to start with testing and then build from there.
+
+21
+00:02:56,338 --> 00:02:57,119
+In this case,
+
+22
+00:03:00,000 --> 00:03:02,070
+In this case, we have an overflow.
+
+23
+00:03:02,070 --> 00:03:03,958
+We also have a cascade failure.
+
+24
+00:03:03,958 --> 00:03:05,846
+We have budget exhaustion, etc.
+
+25
+00:03:05,846 --> 00:03:20,280
+, and then in terms of what we're doing to run this you can just take a look at the read me and it explains all the different actions that take place so this is a pretty good example if you want to take aa look at how go could implement.
+
+26
+00:03:30,000 --> 00:03:37,000
+down from "Agentic" if in AI, and you can run this yourself using the Go language.

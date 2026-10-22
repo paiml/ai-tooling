@@ -1,0 +1,75 @@
+1
+00:00:00,000 --> 00:00:10,000
+[MUSIC]
+
+2
+00:00:18,480 --> 00:00:21,513
+Subagents excel when they do exactly one thing.
+
+3
+00:00:21,513 --> 00:00:29,000
+This is an emerging trend with autonomous systems, and a way to think about it is a surgical instrument designed for
+
+4
+00:00:30,000 --> 00:00:43,293
+procedure and it's a specialization that makes things that are more non-deterministic into a more deterministic focus because of the fact that the subagent only handles a certain type of data.
+
+5
+00:00:43,293 --> 00:00:53,280
+And this is really a critical pattern, that makes subagents more like DevOps build systems versus this AGI fantasy where everything is solvable.
+
+6
+00:00:53,280 --> 00:00:59,480
+We're actually trying to solve only a very specific problem and each subagent operates on
+
+7
+00:01:00,000 --> 00:01:01,950
+and deterministic black box.
+
+8
+00:01:01,950 --> 00:01:09,751
+So, corrupted inputs aren't going to crash the system because this agent only handles a certain type of payload.
+
+9
+00:01:09,751 --> 00:01:14,000
+And this containment is what makes it actually pretty useful.
+
+10
+00:01:30,000 --> 00:01:31,503
+and do something with it.
+
+11
+00:01:31,503 --> 00:01:32,646
+That's all it does.
+
+12
+00:01:32,646 --> 00:01:47,440
+If we look at a deterministic replay, you can get the same warning and always produce the same fix, and this is going to enable a perfect debugging in verification workflow again, a lot likea build system except for it has a few extra components.
+
+13
+00:01:48,240 --> 00:01:54,320
+And if we lookat composition over complexity, you could chain 10 simple agents together instead of
+
+14
+00:02:00,000 --> 00:02:06,312
+In the case of a simple agent, you can solve one particular problem and with fault isolation as well.
+
+15
+00:02:06,312 --> 00:02:09,750
+You can actually focus just on that particular warning.
+
+16
+00:02:09,750 --> 00:02:15,000
+And then in terms of resources each agent gets its own thread, it's own memory limit
+
+17
+00:02:30,000 --> 00:02:41,433
+100 files simultaneously instead of putting it all through a monolithic chatbot that is going to have lots of different solutions and have a very non-deterministic behavior.
+
+18
+00:02:41,433 --> 00:02:53,000
+So this could be the future of what we're gonna see are these specialized subagents that aren't intelligent, they're just useful because they solve a particular problem well.
+
+19
+00:03:00,000 --> 00:03:10,000
+[MUSIC]

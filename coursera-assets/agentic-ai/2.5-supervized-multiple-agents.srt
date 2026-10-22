@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:10,000
+[MUSIC]
+
+2
+00:00:18,400 --> 00:00:27,199
+This particular workflow with a supervisor and two specialist subagents is possible today,
+
+3
+00:00:30,000 --> 00:00:34,677
+a consistent interface that we'll see in the future for agent encoding.
+
+4
+00:00:34,677 --> 00:00:50,816
+One of the reasons why this type of style is good is you can tell that the subagents are doing work, they're doing very specialized tasks and you may want to have some form of visualization where you're able to see what is this subagent doing?
+
+5
+00:00:50,816 --> 00:00:52,265
+What is it working on?
+
+6
+00:00:52,265 --> 00:00:53,319
+Oh look, it just
+
+7
+00:01:00,000 --> 00:01:07,053
+or maybe like a cockpit design while you're developing software, and it's assisting you in giving you feedback.
+
+8
+00:01:07,053 --> 00:01:15,314
+But what's useful about these sub-agents as well is that they're doing one particular problem, and this is what makes them useful.
+
+9
+00:01:15,314 --> 00:01:22,876
+It's a basic component of automation to do one problem and to do it very well, and then to chain those things together.
+
+10
+00:01:22,876 --> 00:01:26,880
+This is effectively how DevOps works and why it's so effective.
+
+11
+00:01:30,000 --> 00:01:36,016
+This is mastering one particular task, and the supervisor is ensuring that things are continuing.
+
+12
+00:01:36,016 --> 00:01:43,088
+And when the agent crashes, and sometimes they will, the supervisor then instantly Rustarts it with a clean slate.
+
+13
+00:01:43,088 --> 00:01:58,720
+And this let it crash philosophy has been around for quite some time with programming languages like or laying and agents can be very simple focused and fearless because we don't care if there's a failure, it'll Rustart in, let's say five milliseconds.
+
+14
+00:02:00,000 --> 00:02:03,923
+monitors, the heartbeats and the routes work from a shared queue.
+
+15
+00:02:03,923 --> 00:02:10,805
+And this is why we can maintain system health without agents because they don't care about each other's existence.
+
+16
+00:02:10,805 --> 00:02:13,280
+Each one is solving a particular problem.
+
+17
+00:02:13,280 --> 00:02:23,000
+This is why a supervised type style could be the future of subaigins because the crash immutility so if you're fixing something and there's some kind of problem,
+
+18
+00:02:30,000 --> 00:02:31,743
+that the previous one crashed.
+
+19
+00:02:31,743 --> 00:02:49,698
+And this is why this style potentially is much more valuable than just having one agent that's solving all the problems at the same time in terms of work distribution as well a supervisor could see the warning and then it could route it to Clippy where it sees a test failure and it can route into attest fix.
+
+20
+00:02:49,698 --> 00:02:58,240
+And then in terms monitoring we can see this every hundred milliseconds or so, It's going to do automatic Rustarts if there's a problem and each of
+
+21
+00:03:00,000 --> 00:03:02,780
+10 crashes an hour before there's some kind of
+
+22
+00:03:03,420 --> 00:03:05,690
+Escalation and maybe you get notification.
+
+23
+00:03:05,690 --> 00:03:15,800
+Hey, we're having problems with one of the subagents Let's go ahead and take a look at this and you also can hot swap right so you could deploy a version two of Clippy while the test fix
+
+24
+00:03:15,960 --> 00:03:20,920
+Version 1 is continuing to run and you don't have any kind of downtime issues as well
+
+25
+00:03:30,000 --> 00:03:40,000
+[MUSIC]

@@ -1,0 +1,115 @@
+1
+00:00:00,000 --> 00:00:02,000
+[swoosh]
+
+2
+00:00:30,000 --> 00:00:33,861
+But in this case for the demo, it'll be a ping and a pong.
+
+3
+00:00:33,861 --> 00:00:39,586
+In this case, the channel will be able to send a message and receive back our request.
+
+4
+00:00:39,586 --> 00:00:43,381
+That's really the core idea with the actor specification.
+
+5
+00:00:43,381 --> 00:00:56,164
+And if we look at way things work, there's a mailbox in this mailbox is able to elegantly communicate with something in the future that could even supervise at a larger scale what's happening.
+
+6
+00:00:56,164 --> 00:00:59,160
+But let's go ahead and shift over to the code
+
+7
+00:01:00,000 --> 00:01:02,790
+and take a look at what that looks like.
+
+8
+00:01:02,790 --> 00:01:15,624
+Here we have the make file, the makefile is in fact one of the best forms of documentation because you see everything that the project would do, a test, a build or runa linta coverage.
+
+9
+00:01:15,624 --> 00:01:17,158
+We can even do a help.
+
+10
+00:01:17,158 --> 00:01:28,040
+We're gonna type in make help and what's nice is that unlike AreadMe which has maybe some documentation in it and some ideas the pictures this is about code
+
+11
+00:01:30,000 --> 00:01:32,657
+the code to execute, to run something.
+
+12
+00:01:32,657 --> 00:01:38,601
+So it's effectively the most accurate form of documentation if it's actually working.
+
+13
+00:01:38,601 --> 00:01:50,000
+So if we type in cargo test right we could do a test that way but we also could just type in make tests or make coverage or even make run to see this thing run and
+
+14
+00:02:00,000 --> 00:02:03,850
+This is the point where we decide how to architect things.
+
+15
+00:02:03,850 --> 00:02:09,428
+It's going to be a bin-based cargo file, in this case, this will be the entry point.
+
+16
+00:02:09,428 --> 00:02:18,125
+If we look at the three files here, the lab is where we are going to architect away the application works because it's very simple.
+
+17
+00:02:18,125 --> 00:02:21,179
+All it does is have one logic file to include.
+
+18
+00:02:21,179 --> 00:02:29,280
+In this case that's simple, you go to Simple here and this is going to have everything that's encapsulated in the program.
+
+19
+00:02:30,000 --> 00:02:32,167
+here that we're using thread.
+
+20
+00:02:32,167 --> 00:02:38,969
+We're using the standard library of Rust and we have a message here, this is the ping pong.
+
+21
+00:02:38,969 --> 00:02:49,360
+We also have a function here that allows us to ping, we also havea pong which is the response and then we collect the messages in this case
+
+22
+00:02:50,160 --> 00:02:55,840
+we have simulation of the actor specification and then finally we pull it all together.
+
+23
+00:03:00,000 --> 00:03:05,437
+is imports from the simple here, in this case ping pong demo and message.
+
+24
+00:03:05,437 --> 00:03:09,682
+And then this orchestrates everything that we need to do.
+
+25
+00:03:09,682 --> 00:03:16,684
+The Rust has really many things that simplify software engineering makes things more reliable.
+
+26
+00:03:16,684 --> 00:03:19,439
+And also if you look at the make file
+
+27
+00:03:20,240 --> 00:03:25,920
+in particular, the fact that you can have this rich tool chain of testing and building
+
+28
+00:03:30,000 --> 00:03:32,758
+get very simple to build reliable demos.
+
+29
+00:03:32,758 --> 00:03:42,000
+In this case, we're doing a very simple actor demo, but you could easily turn this into a more complex system using the power of Rust.

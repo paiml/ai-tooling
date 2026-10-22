@@ -1,0 +1,115 @@
+1
+00:00:00,000 --> 00:00:10,000
+[MUSIC]
+
+2
+00:00:18,600 --> 00:00:26,279
+Go has many solutions ready for creating actors, and you can do this with the go/go routines.
+
+3
+00:00:30,000 --> 00:00:31,690
+with a ping and a pong.
+
+4
+00:00:31,690 --> 00:00:43,009
+And so what happens is we use this actor specification and overload it into the go routines, and it makes it very simple to communicate and send messages.
+
+5
+00:00:43,009 --> 00:00:49,257
+So let's go ahead and get started here with taking a look at what this demo would be.
+
+6
+00:00:49,257 --> 00:00:56,239
+So in order to do that, all we have to do is open up our code here, and look at this make file,
+
+7
+00:01:00,000 --> 00:01:01,877
+different interactions we can do.
+
+8
+00:01:01,877 --> 00:01:03,299
+First up, we have a test.
+
+9
+00:01:03,299 --> 00:01:16,040
+It's always a good idea to start with tests in this case We do go test and this goes through and runs all of the tests We have build which allows us to build the project so you type in gobuild - oh, and this is the output is
+
+10
+00:01:16,240 --> 00:01:21,589
+This bin ping pong The run it we just type in Go Run into lintit.
+
+11
+00:01:21,589 --> 00:01:26,280
+We lent it here with makelints may coverage may clean etc
+
+12
+00:01:30,000 --> 00:01:31,375
+we type in Make Help.
+
+13
+00:01:31,375 --> 00:01:36,547
+This gives us all the commands so we can go ahead and type in make test, right?
+
+14
+00:01:36,547 --> 00:01:38,184
+We see the examples here.
+
+15
+00:01:38,184 --> 00:01:41,000
+If we want to go ahead into say make build,
+
+16
+00:02:00,000 --> 00:02:02,749
+and a pong here that we just type in, make.
+
+17
+00:02:02,749 --> 00:02:08,888
+And we're able to overload this channel here to get this power of the actor's protocol built in.
+
+18
+00:02:08,888 --> 00:02:20,590
+So this channel provides a mechanism for concurrent executing functions to send and receive so it fits really well with the actor specification here and then here we have the message.
+
+19
+00:02:20,590 --> 00:02:27,880
+Now, in order to use this, we're gonna have to go back to our simple here and this is where all the logic is kept.
+
+20
+00:02:30,000 --> 00:02:34,450
+we see there's a implementation interface here, the type.
+
+21
+00:02:34,450 --> 00:02:43,118
+And this also has a function, which is a simple ping pong and this simple ping-bong here as message right here.
+
+22
+00:02:43,118 --> 00:02:50,926
+We also have a weight group and we havea mutex so this allows us to make our actor based simulation.
+
+23
+00:02:50,926 --> 00:02:57,720
+Here we have the function that goes through,and does the wait for the pong, and then we
+
+24
+00:03:00,000 --> 00:03:02,010
+they go function that differs.
+
+25
+00:03:02,010 --> 00:03:06,298
+Finally, at the very end we go ahead and we return the messages.
+
+26
+00:03:06,298 --> 00:03:11,994
+If you want to take a look at the test here, the test is also pretty straightforward.
+
+27
+00:03:11,994 --> 00:03:25,663
+It's a good idea to start first with tests in this case we see that this is given two actors for ping pong exchange and these are the messages right here and then exactly six messages should be exchanged.
+
+28
+00:03:25,663 --> 00:03:26,199
+And then
+
+29
+00:03:30,000 --> 00:03:36,000
+factors, and then we have the deterministic behavior. And we also have a performance test here.

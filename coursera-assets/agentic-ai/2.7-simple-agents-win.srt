@@ -1,0 +1,95 @@
+1
+00:00:00,000 --> 00:00:02,000
+[swoosh]
+
+2
+00:00:30,000 --> 00:00:41,007
+What we see is that that has not panned out and many companies have stopped talking about the concept of AGI because it doesn't make sense in terms of what we're seeing.
+
+3
+00:00:41,007 --> 00:00:47,000
+In fact, the Florida conjecture is one of the best rebuttals to it and then it mentions that
+
+4
+00:01:00,000 --> 00:01:11,987
+law for subagents, which says that if we extrapolate human attention as the bottleneck, we see that there could be an emerging sweet spot for developing with agents.
+
+5
+00:01:11,987 --> 00:01:13,440
+How would this look?
+
+6
+00:01:13,440 --> 00:01:17,072
+Well, if you take a look at small simple problems.
+
+7
+00:01:17,072 --> 00:01:26,880
+For example looking at the clippy warnings from the Rust programming language and building tests and building documents, this is a good
+
+8
+00:01:30,000 --> 00:01:36,022
+Pacific task and automated, and that is something that could fit into the future of agent at coding.
+
+9
+00:01:36,022 --> 00:01:46,260
+Again, a human would look at these different subagents in monitor what they're doing and potentially work with them to make sure that they're getting the right workflow.
+
+10
+00:01:46,260 --> 00:01:56,196
+But it's also being realistic and practical, and not trying to overly solve a huge problem because we know that that's indirect conflict with the Florida conjecture.
+
+11
+00:01:56,196 --> 00:01:57,100
+I think this is
+
+12
+00:02:00,000 --> 00:02:03,313
+what is actually possible, not believing the hype.
+
+13
+00:02:03,313 --> 00:02:20,213
+And potentially for companies to actually use AI, they're going to have to ignore all of the things that they're hearing about automation getting rid of developer jobs automating this job or that job and in fact look at what you can do with really simple.
+
+14
+00:02:20,213 --> 00:02:24,720
+And we could even call them dumb utilities like agents, and the more
+
+15
+00:02:30,000 --> 00:02:30,443
+system.
+
+16
+00:02:30,443 --> 00:02:41,965
+We see this with software engineering and we've seen this for decades that if you try to build a very complex system from the beginning, a lot of times, a software project will fail.
+
+17
+00:02:41,965 --> 00:02:49,625
+If you try To build something very simple that works and then build other simple components that work like microservices.
+
+18
+00:02:49,625 --> 00:02:54,880
+That'sa much better way to develop software and that's why DevOps and microservices
+
+19
+00:03:00,000 --> 00:03:09,365
+software engineering versus in the past, building these huge model of systems that only the very elite software engineers could build.
+
+20
+00:03:09,365 --> 00:03:24,811
+Likewise, if we're only trying to build super complex AGI type systems and constantly failing a way to look at this is it's the same anti-pattern as what software engineers were doing before they discovered microservices.
+
+21
+00:03:24,811 --> 00:03:26,000
+So in the future,
+
+22
+00:03:30,000 --> 00:03:31,573
+medical reasons for it.
+
+23
+00:03:31,573 --> 00:03:46,280
+Again, like Amdoz Law or Luridiz Conjecture and we also see from a practical standpoint, it makes a lot more sense to try to build things that are easy to solve, easy to prove and easy get ROI from instead of trying
+
+24
+00:04:00,000 --> 00:04:07,000
+are a much better way to build agents and try to build overly complex systems that ultimately will fail.

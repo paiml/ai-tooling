@@ -5,6 +5,11 @@
 # Shape follows ont-grounded-ai.course.yaml (ai-ontology).
 
 loudnorm_target: -18.0
+delivery:
+  edx_course_key: course-v1:AI+actors1x+3T2026
+  description: 'Actor models and subagent architecture for agentic AI: isolation, supervision trees, location transparency, and small single-purpose subagents, with Deno, Go and Rust actor demos.'
+  level: Intermediate
+  catalogue_dir: /home/noah/src/catalogue/courses/ait-agentic-ai-and-autonomous-development
 branding:
   accent_color: '#8B5CF6'
   background_color: '#2A1B3D'
@@ -25,7 +30,7 @@ music:
   drop: /home/noah/src/course-studio/assets/audio/drop-v5.wav
   end_sting: /home/noah/src/course-studio/assets/audio/end_sting.wav
   title_sting: /home/noah/src/course-studio/assets/audio/title_sting.wav
-output_dir: coursera-assets/rendered
+output_dir: coursera-assets/rendered/agentic-ai
 partner: Coursera
 project_name: AIT_AgenticAI
 repo_url: github.com/paiml/agentic-ai
