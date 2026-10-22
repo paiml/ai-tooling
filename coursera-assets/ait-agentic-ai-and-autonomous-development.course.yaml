@@ -1,0 +1,263 @@
+# ait-agentic-ai-and-autonomous-development — delivered-course.yaml
+# Authored 2026-10-22 from the 16 delivered .srt files under rendered/agentic-ai
+# (GH-1192, edX actors1x). Every key_concept and reflection line is traceable to a
+# sentence in the named narration; nothing is taken from the plan.
+# Shape follows ont-grounded-ai.course.yaml (ai-ontology).
+
+loudnorm_target: -18.0
+branding:
+  accent_color: '#8B5CF6'
+  background_color: '#2A1B3D'
+  code_font: Source-Code-Pro
+  header_color: '#1F1430'
+  logo: /home/noah/src/course-studio/assets/logos/paiml.svg
+  text_color: '#F5F0FF'
+  title_font: Source-Sans-3
+course_name: 'Agentic AI and Autonomous Development'
+domain: Software Engineering
+frame_rate: 60
+instructor: Noah Gift
+key_concepts_slide:
+  sound: false
+reflection_slide:
+  sound: false
+music:
+  drop: /home/noah/src/course-studio/assets/audio/drop-v5.wav
+  end_sting: /home/noah/src/course-studio/assets/audio/end_sting.wav
+  title_sting: /home/noah/src/course-studio/assets/audio/title_sting.wav
+output_dir: coursera-assets/rendered
+partner: Coursera
+project_name: AIT_AgenticAI
+repo_url: github.com/paiml/agentic-ai
+resolution:
+  height: 1080
+  width: 1920
+source_fps: 30
+subdomain: Actor Models and Subagent Architecture
+target_audience: intermediate
+title:
+  background: solid
+  hero_framing: none
+  particles: 'off'
+  streaming_variant: typewriter
+transcription:
+  corrections:                 # entries observed in the delivered .srt files
+    Rustart: restart
+    Rustarts: restarts
+    Omdl's: Amdahl's
+    lanes: Erlang
+    Florida: Fowler
+    clawd: claude
+    Russ: Rust
+video_dir: coursera-assets/rendered/agentic-ai
+
+videos:
+# ───────────────────────── Module 1: Actor model foundations ─────────────────────────
+- content_mode: demo
+  id: 1.0-course-intro
+  module: 'Module 1: Actor Model Foundations'
+  title: Course Intro
+  subtitle: Why agents with extreme API costs need a different architecture
+  key_concepts:
+  - 'fully saturating an API with many churning agents approaches $10,000 an hour'
+  - 'the course covers core principles, the math and the latest research on agents'
+  reflection:
+  - Cost and non-determinism are architecture problems before they are model problems
+  - Start from the principle, then look at the math
+
+- content_mode: demo
+  id: 1.3-what-is-actor-paradigm
+  module: 'Module 1: Actor Model Foundations'
+  title: What Is the Actor Paradigm
+  subtitle: Isolated processes, mailboxes, zero shared memory
+  key_concepts:
+  - 'actors remove the race conditions and deadlocks that crash production systems'
+  - 'WhatsApp handled huge message rates with just 50 engineers on the actor paradigm'
+  - 'zero shared memory: isolated processes with mailboxes eliminate a category of bugs'
+  reflection:
+  - Isolation removes a whole class of concurrency bugs instead of patching them
+  - Small teams scale when the paradigm does the coordination
+
+- content_mode: demo
+  id: 1.5-actix-supervision-trees-rust
+  module: 'Module 1: Actor Model Foundations'
+  title: Actix Supervision Trees in Rust
+  subtitle: Restart strategy is code you write yourself
+  key_concepts:
+  - 'Actix has no built-in supervision; you implement restart strategies and failure recovery'
+  - 'the supervisor watches each child and a failed child triggers a terminated message'
+  - 'all actors run in a single arbiter thread event loop with no automatic cascading'
+  reflection:
+  - Supervision is a design you write, not a feature you inherit
+  - The terminated message is where the restart decision lives
+
+- content_mode: demo
+  id: 1.6-location-transparency
+  module: 'Module 1: Actor Model Foundations'
+  title: Location Transparency
+  subtitle: One API from local to global
+  key_concepts:
+  - 'develop once, deploy to staging and production with the same code and APIs'
+  - 'the actor behaves the same whether it runs locally or across the globe'
+  - 'the paradigm comes from Erlang and Elixir, and Actix brings it to Rust'
+  reflection:
+  - One API at any distance reduces maintenance overhead
+  - Faster deployments follow from not rewriting for scale
+
+# ───────────────────────── Module 2: Subagent architecture ─────────────────────────
+- content_mode: demo
+  id: 2.2-claude-subagents
+  module: 'Module 2: Subagent Architecture'
+  title: Claude Subagents
+  subtitle: Task-specific agents with isolated state and tool access
+  key_concepts:
+  - 'each subagent keeps isolated state and its own tool access'
+  - 'a configuration file in .claude/agents routes the task to a specialized agent'
+  - 'agents cannot share memory or context; they pass explicit messages'
+  reflection:
+  - Explicit message passing is why agents fit the actor model
+  - Configuration, not prompting, decides which agent takes the task
+
+- content_mode: demo
+  id: 2.3-pmat-sub-agent-architecture
+  module: 'Module 2: Subagent Architecture'
+  title: PMAT Subagent Architecture
+  subtitle: Mailbox isolation, supervision trees, event sourcing
+  key_concepts:
+  - 'non-deterministic agents can corrupt state and loop on retries in production'
+  - 'mailbox isolation prevents race conditions; supervision trees recover from crashes'
+  - 'event sourcing enables time-travel debugging'
+  reflection:
+  - Distributed computing is hard; borrow the actor model that already solved it
+  - Quality enforcement means zero self-emitted technical debt
+
+- content_mode: demo
+  id: 2.4-clippy-sub-agent
+  module: 'Module 2: Subagent Architecture'
+  title: The Clippy Subagent
+  subtitle: A subagent that does exactly one thing
+  key_concepts:
+  - 'subagents excel when they do exactly one thing, like a surgical instrument'
+  - 'narrow scope turns a non-deterministic agent into a more deterministic one'
+  - 'each subagent is a deterministic black box, so corrupted input does not crash the system'
+  reflection:
+  - Subagents look like DevOps build systems, not an AGI fantasy
+  - Solve a specific problem, not everything
+
+- content_mode: demo
+  id: 2.5-supervized-multiple-agents
+  module: 'Module 2: Subagent Architecture'
+  title: Supervised Multiple Agents
+  subtitle: One supervisor and two specialist subagents
+  key_concepts:
+  - 'a supervisor with two specialist subagents works today'
+  - 'each subagent does one very specialized task'
+  - 'visualizing what each subagent is working on, like a cockpit, helps the developer'
+  reflection:
+  - Specialization is what makes the subagents useful
+  - Visibility into each subagent supports the person supervising
+
+- content_mode: demo
+  id: 2.6-amdahls-law-subagents
+  module: 'Module 2: Subagent Architecture'
+  title: Amdahl's Law for Subagents
+  subtitle: Why more cores and more agents give diminishing returns
+  key_concepts:
+  - 'Moore''s law ending means CPUs no longer get faster each year'
+  - 'Amdahl''s law: only part of an application benefits from more cores'
+  - 'eight, sixteen or thirty-two cores give diminishing returns for the serial part'
+  reflection:
+  - The serial fraction sets the ceiling on parallel speedup
+  - More agents will not beat the part that cannot be parallelized
+
+- content_mode: demo
+  id: 2.7-simple-agents-win
+  module: 'Module 2: Subagent Architecture'
+  title: Simple Agents Win
+  subtitle: Human attention as the bottleneck
+  key_concepts:
+  - 'the AGI promise has not panned out and companies talk about it less'
+  - 'Fowler''s conjecture is one of the best rebuttals'
+  - 'small simple tasks, such as clippy warnings, tests and docs, automate well'
+  reflection:
+  - Human attention is the bottleneck to design around
+  - Small, specific tasks are the sweet spot for agents
+
+- content_mode: demo
+  id: 2.8-slm
+  module: 'Module 2: Subagent Architecture'
+  title: Small Language Models
+  subtitle: Scope versus certainty
+  key_concepts:
+  - 'you cannot have both scope and certainty; a calculator is 100% on arithmetic'
+  - 'a 7 billion parameter small language model matches a 70 billion one at a fraction of the cost'
+  - 'many small language models can each handle a narrow task'
+  reflection:
+  - Choose the 100% tool when the task allows it
+  - Narrow scope is what makes a small model enough
+
+# ───────────────────────── Module 3: Multi-language actor demos ─────────────────────────
+- content_mode: demo
+  id: 3.2-deno-actor-demo
+  module: 'Module 3: Multi-Language Actor Demos'
+  title: Deno Actor Demo
+  subtitle: A scripting actor that pings and pongs
+  key_concepts:
+  - 'an async function sends pings and a pong actor spawns the reply back'
+  - 'the temporal execution flow shows start, ping, pong in order'
+  - 'the Makefile scaffolds every component of the demo'
+  reflection:
+  - A scripting actor is the quickest way to see the message flow
+  - The Makefile is the map of what the project does
+
+- content_mode: demo
+  id: 3.3-go-actor-demo
+  module: 'Module 3: Multi-Language Actor Demos'
+  title: Go Actor Demo
+  subtitle: Goroutines as actors
+  key_concepts:
+  - 'goroutines carry the actor specification: ping and pong over channels'
+  - 'start with tests: go test runs every test before you build'
+  - 'the Makefile lists the interactions: test, build, run'
+  reflection:
+  - Go already has the primitives; the actor spec maps onto them
+  - Start with tests
+
+- content_mode: demo
+  id: 3.4-rust-actor-demo
+  module: 'Module 3: Multi-Language Actor Demos'
+  title: Rust Actor Demo
+  subtitle: Channels and mailboxes in Rust
+  key_concepts:
+  - 'the channel sends a message and receives the reply'
+  - 'the mailbox can later be supervised at a larger scale'
+  - 'the Makefile is the best documentation: test, build, run, lint, coverage, help'
+  reflection:
+  - The same actor specification holds in a third language
+  - A Makefile documents what the project can do
+
+- content_mode: demo
+  id: 3.5-go-supervisor-demo
+  module: 'Module 3: Multi-Language Actor Demos'
+  title: Go Supervisor Demo
+  subtitle: A calculator supervisor with an adder and a multiplier
+  key_concepts:
+  - 'small single-purpose agents with a very small scope get better outcomes'
+  - 'two workers, an adder and a multiplier, process arithmetic through message channels'
+  - 'a one-for-one restart strategy with a budget of three restarts per minute'
+  reflection:
+  - Overflow detection triggers self-termination, and the supervisor restarts the worker
+  - A restart budget stops infinite retry loops
+
+- content_mode: demo
+  id: 3.6-agentic-coding-project-repo
+  module: 'Module 3: Multi-Language Actor Demos'
+  title: The Agentic Coding Project Repo
+  subtitle: The course's architectural lessons in one repository
+  key_concepts:
+  - 'zero shared memory by mailboxes and location transparency'
+  - 'PMAT quality gates enforce a zero-tolerance policy that constrains what an agent can do'
+  - 'small language models: about 1% of the cost and 10 to 30 times faster inference'
+  reflection:
+  - Quality gates constrain the agent instead of trusting it
+  - The repo is where the course's lessons run
