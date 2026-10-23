@@ -1,0 +1,201 @@
+1
+00:00:09,820 --> 00:00:16,001
+Have you ever noticed how even though
+more PC components come out every year,
+
+2
+00:00:16,001 --> 00:00:22,552
+different GPUs and different motherboards
+and different machines, things
+
+3
+00:00:22,643 --> 00:00:29,317
+always appear to be about the same
+because there has been diminishing returns
+
+4
+00:00:29,405 --> 00:00:33,820
+with computer architecture
+due to Moore's law ending.
+
+5
+00:00:34,440 --> 00:00:40,431
+distributed computing has also plateaued
+because there is a bottleneck According to
+
+6
+00:00:40,508 --> 00:00:46,396
+on those law which has been proven in
+that when there are IO stops for example
+
+7
+00:00:46,462 --> 00:00:51,593
+network or disk or sleep Then eventually
+that plateaus and you get diminishing
+
+8
+00:00:51,649 --> 00:00:57,110
+returns with cores even though you may
+have a 8-core machine or 16 core machine,
+
+9
+00:00:57,184 --> 00:01:02,614
+32 core machine because many parts of
+the applications that are written in the
+
+10
+00:01:02,674 --> 00:01:07,126
+software itself, aren't able to take
+advantage of that distributed computing.
+
+11
+00:01:07,126 --> 00:01:09,625
+Only certain things are able to benefit.
+
+12
+00:01:09,625 --> 00:01:14,206
+For example, if you're compiling code that
+could be a great example of distributed
+
+13
+00:01:14,206 --> 00:01:18,319
+computing but many things are not
+embarrassingly parallel and that's why we
+
+14
+00:01:18,377 --> 00:01:23,210
+see this diminishing return. Now if we
+look at subagents, We could see a very
+
+15
+00:01:23,265 --> 00:01:27,448
+similar thing happening because even
+though there is a lot of very interesting
+
+16
+00:01:27,503 --> 00:01:31,848
+workflows of the future, for example, you
+have one subagent looking at the warnings
+
+17
+00:01:31,896 --> 00:01:34,973
+that come from your code. Another
+subagent looking at tests.
+
+18
+00:01:34,973 --> 00:01:39,631
+Maybe another subagent updating the readme
+still, the expert developer has to be
+
+19
+00:01:39,631 --> 00:01:44,586
+there watching what's happening or or a
+very interesting workflow of future for
+
+20
+00:01:44,586 --> 00:01:48,948
+example you have 1 you could think about
+an expert developer, instead of before
+
+21
+00:01:48,999 --> 00:01:53,417
+working on only one project. Maybe they're
+working on three projects and I do find
+
+22
+00:01:53,474 --> 00:01:58,130
+myself doing this sometimes but the key
+idea here is that the human attention now
+
+23
+00:01:58,189 --> 00:02:03,498
+becomes the bottleneck. You could think of
+this as Omdel's Laugh or subagents, many
+
+24
+00:02:03,557 --> 00:02:06,140
+people have talked about
+some variant of this.
+
+25
+00:02:06,640 --> 00:02:10,900
+But what likely we'll see is that
+subagents themselves have diminishing
+
+26
+00:02:10,960 --> 00:02:14,200
+returns because the human
+still has to verify the work.
+
+27
+00:02:14,680 --> 00:02:19,174
+Things are not completely automated,
+there's no concept of AGI or artificial
+
+28
+00:02:19,233 --> 00:02:21,340
+general intelligence, it doesn't exist.
+
+29
+00:02:21,860 --> 00:02:28,715
+Instead we have these specialized
+tools and so in the future likely
+
+30
+00:02:28,817 --> 00:02:33,492
+what we'll There'll be some benefits to
+doing things with subagents, but still the
+
+31
+00:02:33,537 --> 00:02:35,486
+human expert becomes even more viable.
+
+32
+00:02:35,486 --> 00:02:40,188
+This is going to have a strong parallel to
+what we've seen in the past with Amdahl's
+
+33
+00:02:40,188 --> 00:02:44,362
+law. This means that efficiency becomes
+very important, the skill of using
+
+34
+00:02:44,420 --> 00:02:48,895
+subagent become very important and it's
+almost the reverse of what you would think
+
+35
+00:02:48,950 --> 00:02:51,720
+as is, is that you would be
+able to do something else.
+
+36
+00:02:52,040 --> 00:02:57,009
+because there are more and more subagents,
+and there's more and ideas on how to use
+
+37
+00:02:57,009 --> 00:03:01,960
+them. The expert becomes even more viable,
+and in fact potentially there's even
+
+38
+00:03:02,020 --> 00:03:07,053
+demand for developers because we get
+diminishing returns and we need to have
+
+39
+00:03:07,117 --> 00:03:11,711
+people looking at what's happening and
+observing what's happened And even though
+
+40
+00:03:11,767 --> 00:03:15,764
+there are some benefits all it does
+is increase the demand for software
+
+41
+00:03:15,822 --> 00:03:16,722
+engineering.
+

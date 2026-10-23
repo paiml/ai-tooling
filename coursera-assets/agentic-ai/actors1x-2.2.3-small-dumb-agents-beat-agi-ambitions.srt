@@ -1,0 +1,247 @@
+1
+00:00:09,800 --> 00:00:13,338
+What could the future of agentic
+coding look like in agentic tooling?
+
+2
+00:00:13,338 --> 00:00:18,083
+Well, if we look at originally when things
+came out around large language models,
+
+3
+00:00:18,083 --> 00:00:22,811
+there was a talk of AGI. What we see is
+that that has not panned out and many
+
+4
+00:00:22,881 --> 00:00:27,198
+companies have stopped talking about the
+concept of Agi because it doesn't make
+
+5
+00:00:27,245 --> 00:00:29,234
+sense in terms of what we're seeing.
+
+6
+00:00:29,234 --> 00:00:33,547
+In fact, in fact, I'm sorry to interrupt
+you but I want to say The Floridi
+
+7
+00:00:33,595 --> 00:00:35,954
+Conjecture is one of the
+best rebuttals to it.
+
+8
+00:00:35,954 --> 00:00:40,120
+And then it mentions that the broad scope
+is an inherent conflict with certainty.
+
+9
+00:00:40,120 --> 00:00:45,466
+And as a result, the more certain you want
+things, the smaller this scope needs to
+
+10
+00:00:45,466 --> 00:00:50,241
+be. If we look at this with combination to
+Amdahl's Law for Subagents which says that
+
+11
+00:00:50,299 --> 00:00:53,103
+if we extrapolate human
+attention as the bottleneck.
+
+12
+00:00:53,103 --> 00:00:58,297
+. if we extrapolates human attention is
+the bottlenecks, and then we see that
+
+13
+00:00:58,356 --> 00:01:02,237
+there could be an emerging sweet
+spot for developing with agents.
+
+14
+00:01:02,237 --> 00:01:09,068
+How would this look? Well, if you take a
+look at small simple problems, for example
+
+15
+00:01:09,143 --> 00:01:14,684
+looking at the clippy warnings from the
+Rust programming language and building
+
+16
+00:01:14,751 --> 00:01:18,685
+tests and building documents.
+This is a good example of.
+
+17
+00:01:18,685 --> 00:01:22,124
+. the ability to take a very
+specific task and automate it.
+
+18
+00:01:22,124 --> 00:01:26,137
+And that is something that could fit
+into the future of agent decoding.
+
+19
+00:01:26,137 --> 00:01:29,968
+Again, a human would look at these
+different subagents and monitor what
+
+20
+00:01:30,022 --> 00:01:34,269
+they're doing and potentially work with
+them to make sure that they're getting the
+
+21
+00:01:34,322 --> 00:01:38,741
+right workflow. But it's also being
+realistic and practical, in not trying to
+
+22
+00:01:38,802 --> 00:01:41,820
+overly solve or try to overly
+resolve the right work flow.
+
+23
+00:01:42,360 --> 00:01:46,360
+a huge problem because we know that
+that's in direct conflict with the Floridi
+
+24
+00:01:46,360 --> 00:01:50,691
+conjecture. I think this is really the
+future, is pragmatism looking at what is
+
+25
+00:01:50,750 --> 00:01:55,458
+actually possible not believing the hype
+and potentially for companies to actually
+
+26
+00:01:55,516 --> 00:02:00,027
+use AI they're going to have to ignore all
+of the things that they're hearing about
+
+27
+00:02:00,027 --> 00:02:02,485
+automation, getting rid of developer jobs.
+
+28
+00:02:02,485 --> 00:02:04,280
+Jobs are going on in a lot of ways.
+
+29
+00:02:04,620 --> 00:02:10,533
+automating this job or that job and in
+fact look at what you can do with really
+
+30
+00:02:10,533 --> 00:02:14,521
+simple, and we could even call
+them dumb utilities like agents.
+
+31
+00:02:14,521 --> 00:02:20,237
+And the more dumb you make a utility, the
+more likely you can integrate it into a
+
+32
+00:02:20,295 --> 00:02:25,437
+larger system. We see this with software
+engineering and we've seen this for
+
+33
+00:02:25,509 --> 00:02:31,068
+decades that if you try to build a very
+complex system A lot of times a software
+
+34
+00:02:31,122 --> 00:02:36,187
+project will fail. If you try to build
+something very simple that works, and then
+
+35
+00:02:36,253 --> 00:02:41,576
+build other simple components that work
+like microservices, that's a much better
+
+36
+00:02:41,629 --> 00:02:46,932
+way to develop software. And that's why
+DevOps and microservices have played a
+
+37
+00:02:46,996 --> 00:02:51,285
+huge role in making productivity
+an efficient component of software
+
+38
+00:02:51,285 --> 00:02:56,880
+engineering. versus in the past, building
+these huge monolithic systems that only
+
+39
+00:02:56,942 --> 00:02:59,804
+the very elite software
+engineers could build.
+
+40
+00:02:59,804 --> 00:03:05,983
+Likewise, if we're only trying to build
+super complex AGI type systems and
+
+41
+00:03:06,061 --> 00:03:11,418
+constantly failing a way to look at this
+is it's the same anti-pattern as what
+
+42
+00:03:11,474 --> 00:03:15,560
+software engineers were doing before
+they discovered microservices.
+
+43
+00:03:16,020 --> 00:03:19,251
+So in the future, it's very likely
+that simple agents will win.
+
+44
+00:03:19,700 --> 00:03:25,599
+There's a lot of mathematical reasons for
+it, again like Amdahls' Law or Floridi's
+
+45
+00:03:25,599 --> 00:03:30,099
+conjecture. And we also see from a
+practical standpoint, it makes a lot more
+
+46
+00:03:30,158 --> 00:03:35,745
+sense to try to build things that are easy
+to solve, easy to prove and easy get ROI
+
+47
+00:03:35,829 --> 00:03:41,720
+from instead of trying a home run every
+time the ball is thrown across the plate.
+
+48
+00:03:41,720 --> 00:03:46,857
+And striking out, you're trying to get
+base hits or trying to on base and get a
+
+49
+00:03:46,927 --> 00:03:53,138
+walk. It's that same baseball type analogy
+of simple wins are a much better way to
+
+50
+00:03:53,211 --> 00:03:57,900
+build agents than try to build
+overly complex systems that
+

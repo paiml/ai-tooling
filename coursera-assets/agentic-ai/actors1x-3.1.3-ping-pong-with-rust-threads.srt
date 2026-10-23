@@ -1,0 +1,195 @@
+1
+00:00:09,760 --> 00:00:12,340
+Rust has many ways that
+you can implement actors.
+
+2
+00:00:13,040 --> 00:00:17,260
+In this particular demo, we're gonna use
+Threads to make things extremely simple.
+
+3
+00:00:18,060 --> 00:00:22,858
+You could also use Actix, you could use
+Tokio but in this case for the demo it'll
+
+4
+00:00:22,918 --> 00:00:27,304
+be a ping and a pong and in this the
+channel will be able to send a message and
+
+5
+00:00:27,360 --> 00:00:31,560
+receive back a request. That's really
+the core idea, we can implement that.
+
+6
+00:00:32,520 --> 00:00:38,665
+the actor specification. And if we look at
+the way things work, there's a mailbox and
+
+7
+00:00:38,728 --> 00:00:43,520
+this mailbox is able to elegantly
+communicate with something in the future
+
+8
+00:00:43,520 --> 00:00:47,532
+that could even supervise at a
+larger scale what's happening.
+
+9
+00:00:47,532 --> 00:00:52,029
+But let's go ahead and shift over to the
+code here and take a look at what that
+
+10
+00:00:52,029 --> 00:00:57,871
+looks like. Here we have the make file,
+The In fact, one of the best forms of
+
+11
+00:00:57,926 --> 00:01:01,880
+documentation because you see
+everything that the project would do.
+
+12
+00:01:01,880 --> 00:01:05,960
+A test, a build or run, a lint, a
+coverage we can even do with help.
+
+13
+00:01:06,500 --> 00:01:13,401
+We can type in make help and what's nice
+is that unlike Readme which has maybe some
+
+14
+00:01:13,487 --> 00:01:20,148
+documentation in it and This is about code
+
+15
+00:01:20,276 --> 00:01:26,943
+and it tells you line by
+line the code to execute to
+
+16
+00:01:27,071 --> 00:01:32,916
+run something. So it's
+effectively the most
+
+17
+00:01:33,070 --> 00:01:38,945
+accurate form of documentation if it's
+
+18
+00:01:39,099 --> 00:01:43,540
+actually working. we see
+the application running.
+
+19
+00:01:44,280 --> 00:01:49,725
+Now in terms of the architecture of this
+Rust demo, the first thing to point out
+
+20
+00:01:49,776 --> 00:01:54,355
+would be a cargo file. This is the point
+where we decide how to architect things,
+
+21
+00:01:54,415 --> 00:01:59,811
+it's gonna be a bin based cargo file, in
+this case this will be the entry point.
+
+22
+00:01:59,811 --> 00:02:05,423
+And if we look at the three files
+here, the lib is where we are going to
+
+23
+00:02:05,501 --> 00:02:10,178
+architect. the way the application
+works because it's very simple.
+
+24
+00:02:10,178 --> 00:02:15,185
+All it does is have one logic file to
+include in this case, that's simple.
+
+25
+00:02:15,185 --> 00:02:21,084
+If we go to Simple here, this is going to
+have everything that's encapsulated in the
+
+26
+00:02:21,084 --> 00:02:23,532
+program so we have the imports here.
+
+27
+00:02:23,532 --> 00:02:28,980
+So we're using thread where you see the
+standard library of Rust and we have a
+
+28
+00:02:28,980 --> 00:02:34,133
+message here, This is We also have a
+function here that allows us to ping.
+
+29
+00:02:34,133 --> 00:02:36,928
+We also a pong, right?
+Which is the response.
+
+30
+00:02:36,928 --> 00:02:42,722
+And then we collect the messages in this
+case, we have a simulation of the actor
+
+31
+00:02:42,722 --> 00:02:46,680
+specification and then finally
+we pull it all together.
+
+32
+00:02:47,120 --> 00:02:52,697
+Now in terms of the main dot RS here all
+this thing does is imports from Pong,
+
+33
+00:02:52,764 --> 00:02:58,461
+right the simple here in this case ping
+pong demo and message and then this
+
+34
+00:02:58,531 --> 00:03:04,838
+orchestrates everything that we need to
+do so rust has Really many things that
+
+35
+00:03:04,896 --> 00:03:08,211
+simplify software engineering
+makes things more reliable.
+
+36
+00:03:08,211 --> 00:03:14,675
+And also if you look at the make file In
+particular The fact that you can have this
+
+37
+00:03:14,735 --> 00:03:20,204
+rich tool chain of testing and building
+and releasing and Lintine, and Coverage.
+
+38
+00:03:20,204 --> 00:03:24,053
+All these things make it very
+simple to build reliable demos.
+
+39
+00:03:24,053 --> 00:03:24,953
+In this case
+
+40
+00:03:25,160 --> 00:03:32,160
+we
+

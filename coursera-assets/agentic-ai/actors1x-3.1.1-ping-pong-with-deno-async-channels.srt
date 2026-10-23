@@ -1,0 +1,279 @@
+1
+00:00:09,580 --> 00:00:14,344
+A great way to get started with learning
+about actor implementations is to use a
+
+2
+00:00:14,344 --> 00:00:17,120
+scripting language like Deno TypeScript.
+
+3
+00:00:17,120 --> 00:00:23,288
+And if we look at the architecture here,
+we have a ping actor, this async function
+
+4
+00:00:23,357 --> 00:00:28,742
+sends a few pings. We also have upon actor
+that can accept that message and send it
+
+5
+00:00:28,812 --> 00:00:35,055
+response back. So this is really similar
+to what would happen in a real world We
+
+6
+00:00:35,112 --> 00:00:38,719
+see this temporal execution flow
+here, a start, a ping, a pong.
+
+7
+00:00:38,719 --> 00:00:43,199
+A ping, appong et cetera. And then we
+have the send value and the receive value.
+
+8
+00:00:43,199 --> 00:00:48,272
+So it's a good way to understand the core
+foundation of what also could be at play
+
+9
+00:00:48,272 --> 00:00:55,076
+with the coming agentic coding tools and
+let's go ahead and take a look now at what
+
+10
+00:00:55,076 --> 00:00:59,140
+a demo would look like. And we'll see
+how that works, so here's our demo.
+
+11
+00:00:59,940 --> 00:01:03,160
+Here we have a simple Deno
+Actors program inside.
+
+12
+00:01:03,720 --> 00:01:09,354
+We first start off with a make file, and
+this gives us a scaffold to run all of the
+
+13
+00:01:09,415 --> 00:01:11,740
+different components, so testing right?
+
+14
+00:01:12,160 --> 00:01:15,594
+We do. . Deno test for
+building, we do deno compile.
+
+15
+00:01:15,594 --> 00:01:20,086
+This is a real capability of Deno that's
+impressive is the ability to compile to
+
+16
+00:01:20,086 --> 00:01:22,500
+JavaScript but also to
+compile executables.
+
+17
+00:01:22,500 --> 00:01:27,494
+We also have dno run and then we have
+dnolint as well which will lint the syntax
+
+18
+00:01:27,556 --> 00:01:32,358
+as well as check, and then format
+format, we have format for that.
+
+19
+00:01:32,358 --> 00:01:35,160
+And then we do a format test for buildin.
+
+20
+00:01:35,540 --> 00:01:38,309
+We have coverage, we have
+clean and we also have help.
+
+21
+00:01:38,309 --> 00:01:44,833
+So if we go ahead and do make help, what's
+really nice is that we have this Help menu
+
+22
+00:01:44,880 --> 00:01:49,818
+that tells us what to do. So first up
+potentially what I would do is run it.
+
+23
+00:01:49,818 --> 00:01:54,924
+We can go make run and you can see here
+that we're sending messages back and forth
+
+24
+00:01:54,924 --> 00:01:56,975
+using the actor, or actor, making a run.
+
+25
+00:01:57,300 --> 00:02:02,950
+semantics and it gives us exactly what's
+happening ping pong, ping pong etc.
+
+26
+00:02:02,950 --> 00:02:09,019
+Now in terms of the structure of the
+program first step let's look at The main
+
+27
+00:02:09,108 --> 00:02:16,064
+entry point here so you can see here
+that there's an import and this import is
+
+28
+00:02:16,174 --> 00:02:23,157
+from simple dot ts which has all
+of the logic but And this async
+
+29
+00:02:23,234 --> 00:02:28,650
+function goes through and implements
+everything that's inside of simple.
+
+30
+00:02:28,650 --> 00:02:31,677
+ts. Let's go ahead and
+take a look at simple.
+
+31
+00:02:31,677 --> 00:02:36,751
+tas, inside of here is where we do the
+actor specification, so we first start off
+
+32
+00:02:36,817 --> 00:02:41,320
+with export interface this is a simple
+message that says ping pong then
+
+33
+00:02:41,800 --> 00:02:48,633
+we channel does follow the style of
+an actor, which has a mailbox and it
+
+34
+00:02:48,687 --> 00:02:51,716
+has the ability to interact
+with location transparency.
+
+35
+00:02:51,716 --> 00:02:54,790
+But it's intentionally
+simplified for a demo.
+
+36
+00:02:54,790 --> 00:02:58,116
+So in this case, this
+class has the able to send.
+
+37
+00:02:58,116 --> 00:03:02,524
+It also has the building to receive as
+well and returns with a promise, and then
+
+38
+00:03:02,579 --> 00:03:07,997
+at the very. . The very. . And then at
+that very end of time it's going to be end
+
+39
+00:03:08,055 --> 00:03:11,469
+here, we have this async
+function called simple ping pong.
+
+40
+00:03:11,469 --> 00:03:15,065
+And this simple pingpong is what
+actually does the work here.
+
+41
+00:03:15,065 --> 00:03:19,691
+And then we have the PONG actor, which
+also plays a role in our messaging at the
+
+42
+00:03:19,691 --> 00:03:24,724
+very end here. We run both actors
+concurrently using a promise really that's
+
+43
+00:03:24,788 --> 00:03:29,853
+all there is to it. The other component as
+well is to have some tests test some tests
+
+44
+00:03:29,912 --> 00:03:34,026
+and then we'll be I always like to do
+test-driven development, especially when
+
+45
+00:03:34,071 --> 00:03:38,536
+I'm coding with agents. In this case we
+do a three round ping pong and at the very
+
+46
+00:03:38,596 --> 00:03:40,778
+end here we can test the message ordering.
+
+47
+00:03:40,778 --> 00:03:45,580
+We can also test deterministic behavior
+and we could also test that performance.
+
+48
+00:03:45,580 --> 00:03:49,734
+Now if you want to go ahead and run that
+test, we can also do this by typing make
+
+49
+00:03:49,734 --> 00:03:54,820
+tests, this goes through and runs
+the tests as a result of testing it.
+
+50
+00:03:55,240 --> 00:04:00,528
+We can even look at the coverage report as
+well, which I also think is a great idea
+
+51
+00:04:00,528 --> 00:04:03,778
+to make sure that you're
+looking at the coverage.
+
+52
+00:04:03,778 --> 00:04:07,978
+You can find lots of hidden
+bugs that coverage will reveal.
+
+53
+00:04:07,978 --> 00:04:10,621
+In this case we have pretty
+good coverage as well.
+
+54
+00:04:10,621 --> 00:04:15,755
+So in a nutshell, this structure is a
+pretty good structure for learning about
+
+55
+00:04:15,813 --> 00:04:20,327
+the actor specification and why it's
+important and why its important, with
+
+56
+00:04:20,364 --> 00:04:23,544
+agent to coding. Go ahead and
+take a look and run it yourself.
+
+57
+00:04:23,544 --> 00:04:24,444
+So go ahead and
+

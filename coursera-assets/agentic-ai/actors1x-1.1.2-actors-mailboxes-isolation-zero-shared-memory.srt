@@ -1,0 +1,191 @@
+1
+00:00:09,880 --> 00:00:15,156
+Actors solve the concurrency $50 billion
+problem from race conditions and deadlocks
+
+2
+00:00:15,218 --> 00:00:20,080
+that crash to regular
+production daily system tasks.
+
+3
+00:00:20,540 --> 00:00:25,273
+A good example of a high performance
+system that uses the actor's paradigm is
+
+4
+00:00:25,329 --> 00:00:32,028
+WhatsApp. It could handle, let's say
+70 million or more messages per second
+
+5
+00:00:32,112 --> 00:00:36,420
+with just 50 engineers This was
+when they built this in Erlang.
+
+6
+00:00:36,820 --> 00:00:42,741
+We also see platforms like Discord with
+millions of concurrent users, and also the
+
+7
+00:00:42,812 --> 00:00:47,222
+Telecom Ericsson was able to
+achieve extreme uptime like 99.
+
+8
+00:00:47,222 --> 00:00:51,698
+99999 uptime. This is one pattern and
+there's zero shared memory and it's how
+
+9
+00:00:51,758 --> 00:00:56,460
+isolated processes with Discord are in
+a way that can be used for all of us,
+
+10
+00:00:56,900 --> 00:01:02,300
+mailbox eliminate an entire category
+of bugs while processing millions of
+
+11
+00:01:02,374 --> 00:01:07,934
+operations per second. So if we take a
+look at what that really means, first up
+
+12
+00:01:07,995 --> 00:01:12,495
+here in terms of architecture, we have
+isolated processes with exclusive state
+
+13
+00:01:12,553 --> 00:01:17,450
+ownership. We also have a FIFO mailbox so
+this is a bounded queue with let's say 10
+
+14
+00:01:17,510 --> 00:01:20,025
+000 message capacity capacity capacity.
+
+15
+00:01:20,025 --> 00:01:24,197
+Capacity and capability are And
+then we have sequential processing.
+
+16
+00:01:24,197 --> 00:01:28,920
+So one at a time and then zero
+shared memory, no locks, no races.
+
+17
+00:01:29,280 --> 00:01:31,720
+And then you also have
+location transparency.
+
+18
+00:01:31,720 --> 00:01:36,775
+So it's the same API that's both local
+or remote in terms of lifecycle we have
+
+19
+00:01:36,775 --> 00:01:43,296
+created than started them processing
+than idle and terminated and these failed
+
+20
+00:01:43,352 --> 00:01:48,765
+actors can trigger supervisor restarts
+so the crash itself is isolated and the
+
+21
+00:01:48,833 --> 00:01:51,437
+failure can't corrupt other actors.
+
+22
+00:01:51,437 --> 00:01:57,006
+Hot reloading without dropping connections
+and also event sourcing enables replay
+
+23
+00:01:57,006 --> 00:02:03,780
+debugging. So in terms of performance
+here, if you look at Erlang Beam as a good
+
+24
+00:02:03,859 --> 00:02:10,417
+example, we have very low memory per actor
+We also could have 100,000 actors on a
+
+25
+00:02:10,500 --> 00:02:17,111
+single 4 gigabyte machine. We have very
+low latency messages with actics like
+
+26
+00:02:17,200 --> 00:02:22,653
+let's say 15 milliseconds to process
+100,00 messages and then we have sub
+
+27
+00:02:22,721 --> 00:02:25,194
+microsecond message passing locally.
+
+28
+00:02:25,194 --> 00:02:30,536
+So this means that you can get things
+like a million messages a second through
+
+29
+00:02:30,536 --> 00:02:34,591
+output, And then in terms of the
+production guarantees, the message
+
+30
+00:02:34,646 --> 00:02:37,210
+ordering is between the
+sender and receiver pairs.
+
+31
+00:02:37,210 --> 00:02:41,403
+And then at most once delivery semantics
+or no duplicates and then back pressure
+
+32
+00:02:41,457 --> 00:02:45,507
+via bounded mailboxes. So you have
+automatic restarts on failures with a
+
+33
+00:02:45,557 --> 00:02:48,195
+supervisor, and then zero
+downtime deployments.
+
+34
+00:02:48,195 --> 00:02:52,349
+So actors have been around for quite some
+time, time with a supervisor and then 0
+
+35
+00:02:52,349 --> 00:02:56,041
+downtime deployments so actors are
+being around for quiet sometime time.
+
+36
+00:02:56,380 --> 00:02:59,400
+We have lots of examples
+of actors in production.
+
+37
+00:02:59,860 --> 00:03:06,184
+And also, in terms of agentic AI,
+actors can play a big role because the
+
+38
+00:03:06,272 --> 00:03:12,371
+pattern of really robust concurrency
+works well with agents and
+
+39
+00:03:12,464 --> 00:03:13,400
+subagents.
+

@@ -1,0 +1,639 @@
+1
+00:00:09,300 --> 00:00:13,696
+Welcome to the course, "Agentic
+AI and Autonomous Development.
+
+2
+00:00:13,696 --> 00:00:19,373
+" We're gonna talk about how you can build
+solutions in 90 minutes or less that are
+
+3
+00:00:19,452 --> 00:00:25,728
+from zero to production. Some of the ideas
+around this course involve getting to the
+
+4
+00:00:25,785 --> 00:00:30,537
+core principles, also looking at the math
+and the latest scientific research on
+
+5
+00:00:30,606 --> 00:00:35,502
+agents. It's a great way for us as
+scientists, Let's go ahead and talk about
+
+6
+00:00:35,561 --> 00:00:37,381
+the problem here to start with.
+
+7
+00:00:37,381 --> 00:00:41,535
+One of the real problems with using these
+large language models is that you could
+
+8
+00:00:41,535 --> 00:00:47,121
+develop a very expensive habit of using
+things that have extreme API costs.
+
+9
+00:00:47,121 --> 00:00:51,985
+For example, if you're fully saturating
+an API, maybe you're approaching close to
+
+10
+00:00:51,985 --> 00:00:56,478
+$10,000 an hour because-- because if your
+approach is close to 10 thousand dollars
+
+11
+00:00:56,478 --> 00:01:01,054
+per hour-- You have lots of different
+agents running, and these agents are
+
+12
+00:01:01,112 --> 00:01:05,370
+churning and putting huge contexts
+into whatever it is you're calling.
+
+13
+00:01:05,370 --> 00:01:10,563
+And you also have a problem with
+determinism because you're using such a
+
+14
+00:01:10,635 --> 00:01:15,165
+large model. A lot of the things you're
+doing don't work so, You have to retry
+
+15
+00:01:15,224 --> 00:01:20,400
+over and over again and in many ways
+an infinite failure scenario works.
+
+16
+00:01:21,400 --> 00:01:26,760
+If we look at the actor model, this is a
+great way to recompose a problem, reframe
+
+17
+00:01:26,760 --> 00:01:32,815
+the problem. Think about things from what
+we've already done in traditional software
+
+18
+00:01:32,884 --> 00:01:37,989
+engineering best practice. Some of the
+things you can do with the actor models
+
+19
+00:01:38,048 --> 00:01:42,701
+that came from Ericsson and Erlang is to
+use things that have supervision and then
+
+20
+00:01:42,759 --> 00:01:47,240
+have extremely high throughput, but
+extremely and zero shared memory.
+
+21
+00:01:48,440 --> 00:01:53,717
+If we look at a good example of what a
+success looked like, WhatsApp was built
+
+22
+00:01:53,775 --> 00:01:59,433
+originally with Erlang, 50 engineers
+developed a system that could handle two
+
+23
+00:01:59,511 --> 00:02:05,331
+billion users. So we see that the
+architecture, the choices, the design
+
+24
+00:02:05,400 --> 00:02:07,680
+where concurrency was a big role.
+
+25
+00:02:08,300 --> 00:02:10,608
+was a huge factor in
+the success of WhatsApp.
+
+26
+00:02:10,608 --> 00:02:15,543
+If we look at some of the best practices
+for modern software engineering with
+
+27
+00:02:15,543 --> 00:02:19,278
+agents, one of the things that we
+need to control for is determinism.
+
+28
+00:02:19,278 --> 00:02:23,858
+We know that agents that are larger
+especially are less deterministic because
+
+29
+00:02:23,858 --> 00:02:28,695
+they're trying to solve so many different
+problems, they hallucinate and hallucinate
+
+30
+00:02:28,695 --> 00:02:34,611
+a lot more than others. One of the ways to
+gate that is to have a quality gate that
+
+31
+00:02:34,663 --> 00:02:37,349
+looks at the technical
+defect gradient of the code.
+
+32
+00:02:37,349 --> 00:02:42,344
+So you score the code and you say, this
+particular file is an A file or it's a B
+
+33
+00:02:42,396 --> 00:02:43,958
+file or its an F, it's failed.
+
+34
+00:02:43,958 --> 00:02:48,999
+We need to fix things. Another thing to
+look at is the complexity so how many
+
+35
+00:02:49,063 --> 00:02:51,439
+conditional statements are on your code?
+
+36
+00:02:51,439 --> 00:02:56,870
+How many conditional statement statements
+are in your code you should be looking at
+
+37
+00:02:56,952 --> 00:03:02,585
+building things with a quality gate
+where complexity doesn't exceed 10.
+
+38
+00:03:02,585 --> 00:03:06,605
+Also, what about self-emitted
+technical defects?
+
+39
+00:03:06,605 --> 00:03:13,175
+This is another anti pattern that's
+very easy to happen when you're building
+
+40
+00:03:13,261 --> 00:03:15,708
+things It puts in a to-do statement.
+
+41
+00:03:15,708 --> 00:03:19,658
+Before you know it, you have 100 or 1000
+to-dos statements in your production
+
+42
+00:03:19,658 --> 00:03:22,499
+system. All those to do
+statements are defects.
+
+43
+00:03:22,499 --> 00:03:26,787
+We need to prevent any of those self
+admitted technical defects from forming
+
+44
+00:03:26,844 --> 00:03:32,540
+also, it's important to think about the
+concept of zero tolerance for defects.
+
+45
+00:03:32,540 --> 00:03:37,264
+The Toyota way system is one example that
+in the automobile industry where we're
+
+46
+00:03:37,264 --> 00:03:39,060
+where we were when you started out.
+
+47
+00:03:39,540 --> 00:03:41,950
+They've developed systems
+that prevent defects.
+
+48
+00:03:41,950 --> 00:03:46,711
+We look at things like Six Sigma as well,
+where you're looking at ways to prevent
+
+49
+00:03:46,711 --> 00:03:49,645
+the systemic workflows
+that create defects.
+
+50
+00:03:49,645 --> 00:03:55,024
+If we look at thing like cargo tests for
+example, you could make sure that things
+
+51
+00:03:55,024 --> 00:04:00,213
+are gated based on the test quality or
+you can look at it and see if there's any
+
+52
+00:04:00,213 --> 00:04:06,934
+problems. PMAT and look at a quality
+gate and say, "Look, if these
+
+53
+00:04:07,038 --> 00:04:13,526
+particular measurements are not
+in place, we're not going to be
+
+54
+00:04:13,631 --> 00:04:18,509
+able to release the
+software. The complexity.
+
+55
+00:04:18,509 --> 00:04:21,660
+The self-immediate technical debt.
+
+56
+00:04:22,280 --> 00:04:26,434
+thinking about I've developed 1000 lines
+of code or 2000 lines of codes or 10,000
+
+57
+00:04:26,434 --> 00:04:29,458
+lines of cod where I developed
+lots of new features.
+
+58
+00:04:29,458 --> 00:04:34,559
+Instead we want to develop zero defects so
+this is a different framing the problem so
+
+59
+00:04:34,623 --> 00:04:39,556
+that you don't create defects in this
+course we also talk about large language
+
+60
+00:04:39,556 --> 00:04:43,607
+models versus the small language models
+there's a lot of research that compares
+
+61
+00:04:43,607 --> 00:04:46,085
+comparison, compared to other languages.
+
+62
+00:04:46,085 --> 00:04:49,588
+There's the 1% cost versus
+a large language model.
+
+63
+00:04:49,588 --> 00:04:56,509
+And if the equal results are getting
+produced from the large language
+
+64
+00:04:56,576 --> 00:05:00,700
+and small language model, why
+would you pay 100 times more?
+
+65
+00:05:01,100 --> 00:05:06,820
+So this becomes a huge factor as you start
+to build out that different solutions is
+
+66
+00:05:06,820 --> 00:05:11,096
+if you can get better performance, in
+terms of the inference and then equal
+
+67
+00:05:11,145 --> 00:05:15,100
+performance in terms the accuracy, the
+smallest language model becomes a much
+
+68
+00:05:15,155 --> 00:05:20,248
+more compelling offering. The big
+takeaway is that small models win.
+
+69
+00:05:20,248 --> 00:05:24,771
+They're 10 to 30 times faster for
+inference, they're 1% of the cost and you
+
+70
+00:05:24,831 --> 00:05:29,190
+can deploy on device which starts to solve
+a very significant problem in terms or the
+
+71
+00:05:29,190 --> 00:05:33,240
+cost, and you could deploy on-device
+which starts solve a significant problem
+
+72
+00:05:33,600 --> 00:05:38,399
+Sovereignty many regions of the world
+don't want to be sending their data to
+
+73
+00:05:38,462 --> 00:05:43,732
+other regions. You also potentially are
+concerned with the laws and you don't
+
+74
+00:05:43,798 --> 00:05:48,737
+wanna be sending data somewhere where they
+could maybe treat things in a different
+
+75
+00:05:48,796 --> 00:05:51,980
+way that is legally required
+by your organization.
+
+76
+00:05:51,980 --> 00:05:56,750
+And so, the small language models solve
+security, they solve inference speed and
+
+77
+00:05:56,750 --> 00:05:58,420
+they also solve a cost problem.
+
+78
+00:05:59,500 --> 00:06:06,186
+Now, in terms of when you're
+building something with let's
+
+79
+00:06:06,301 --> 00:06:13,007
+say lots of small language models,
+if we look at the architecture
+
+80
+00:06:13,108 --> 00:06:20,045
+of a distributed system like Erlang
+and they have a supervision tree.
+
+81
+00:06:20,045 --> 00:06:24,562
+The a bad input for a small language
+model, you just restart it and things are
+
+82
+00:06:24,614 --> 00:06:30,521
+back to normal. If we look at the cost
+target, this is another interesting way to
+
+83
+00:06:30,601 --> 00:06:36,081
+think about building solutions instead of
+only building solutions for the accuracy
+
+84
+00:06:36,147 --> 00:06:39,667
+or only building solution for
+the largest model you can get.
+
+85
+00:06:39,667 --> 00:06:44,840
+A different way to thinking about
+buildings solutions is how do I low,
+
+86
+00:06:47,220 --> 00:06:52,398
+Let's try it again. Another way to think
+about this is to say, how do I lower the
+
+87
+00:06:52,451 --> 00:06:56,837
+cost so it's almost zero so that I
+can have a cost target that makes this
+
+88
+00:06:56,899 --> 00:07:01,421
+essentially a fixed cost? So I can run
+things like, "I would run a server," or "I
+
+89
+00:07:01,478 --> 00:07:03,874
+will run things Like my SQL query.
+
+90
+00:07:03,874 --> 00:07:08,640
+" If you start to think of things from A
+fixed-cost perspective, suddenly, things
+
+91
+00:07:08,640 --> 00:07:15,295
+become much more compelling. Suddenly
+it becomes Another emerging thing
+
+92
+00:07:15,371 --> 00:07:20,980
+that we're seeing with the agentic
+coding systems is the idea of a subagent.
+
+93
+00:07:20,980 --> 00:07:25,840
+A subagent is one agent, one task, an
+isolated state and parallel execution.
+
+94
+00:07:26,280 --> 00:07:31,396
+If you notice this is the identical
+pattern of a distributed system with a
+
+95
+00:07:31,396 --> 00:07:36,140
+supervisor and this is why
+supervisors in all of the history
+
+96
+00:07:36,520 --> 00:07:42,421
+supervision trees and
+
+97
+00:07:42,702 --> 00:07:48,323
+the high performance
+
+98
+00:07:48,604 --> 00:07:55,067
+systems start to really
+
+99
+00:07:55,348 --> 00:08:02,236
+fit in terms of making In the case of
+
+100
+00:08:02,298 --> 00:08:07,276
+Amdahl's law for agents, human attention
+becomes the bottleneck because a human can
+
+101
+00:08:07,331 --> 00:08:11,319
+only review so many different things
+if there's three agents or six agents.
+
+102
+00:08:11,319 --> 00:08:16,907
+Maybe that's the capacity of a human
+and if you think about things from that
+
+103
+00:08:16,907 --> 00:08:21,206
+perspective, it makes it much more
+important to have quality over quantity.
+
+104
+00:08:21,206 --> 00:08:25,593
+Maybe six really good agents are better
+than 20, 20 different people can only be
+
+105
+00:08:25,593 --> 00:08:29,640
+able to really noisy agents that
+a human can't pay attention to.
+
+106
+00:08:31,120 --> 00:08:37,013
+In terms of simple versus complex, this is
+part of the Floridi conjecture is that the
+
+107
+00:08:37,074 --> 00:08:41,183
+more complex a system gets, the
+more you have to limit the scope.
+
+108
+00:08:41,183 --> 00:08:46,502
+If you want something simple you're also
+gonna have an issue in terms of what are
+
+109
+00:08:46,502 --> 00:08:51,340
+you gonna do to make that
+simple system more complex?
+
+110
+00:08:51,860 --> 00:08:57,137
+One of the ways that we think about this
+is that the simple systems will outperform
+
+111
+00:08:57,137 --> 00:09:01,628
+the complex systems because you can put
+many different simple systems together.
+
+112
+00:09:01,628 --> 00:09:06,327
+The complex system, because it's trying to
+do so many different things, is gonna have
+
+113
+00:09:06,387 --> 00:09:10,466
+a lower accuracy and this lower
+accuracy becomes a problem over time.
+
+114
+00:09:10,466 --> 00:09:14,320
+We know a calculator for example
+does one thing and does it well?
+
+115
+00:09:15,000 --> 00:09:19,275
+And that's got 100% accuracy. If you do
+the same thing with, let's say GPT-4, it's
+
+116
+00:09:19,331 --> 00:09:23,867
+got 60% accuracy. " Some of the things
+to think about when building production
+
+117
+00:09:23,927 --> 00:09:27,619
+systems is this formula of can
+we build something quickly?
+
+118
+00:09:27,619 --> 00:09:31,260
+Well if we use actors that's one way
+to make a high performance system.
+
+119
+00:09:31,260 --> 00:09:35,004
+If we enforce quality from the very
+beginning, using tools like PMAT or a
+
+120
+00:09:35,004 --> 00:09:38,286
+Toyota Way, you're gonna be able
+to do it in an even better way.
+
+121
+00:09:38,580 --> 00:09:42,939
+If we use smaller language models, we also
+are going to be able to deploy things more
+
+122
+00:09:42,939 --> 00:09:44,683
+quickly and more cost effectively.
+
+123
+00:09:44,683 --> 00:09:48,221
+And then finally, if we use the
+overarching architecture for software
+
+124
+00:09:48,221 --> 00:09:52,170
+engineering that's worked well in the
+past, supervision trees this is a great
+
+125
+00:09:52,170 --> 00:09:55,965
+way to get things done. So finally,
+the result if you put all these things
+
+126
+00:09:56,009 --> 00:09:59,952
+together and these are some of the
+concepts we'll cover in a course is more
+
+127
+00:09:59,998 --> 00:10:04,738
+cost-effectively. you can get a low cost
+and deterministic solution, maybe not
+
+128
+00:10:04,797 --> 00:10:09,289
+exactly 100% deterministic but approaching
+100%, especially if the task has been
+
+129
+00:10:09,345 --> 00:10:12,648
+narrowed so that a small
+language model can tackle it.
+
+130
+00:10:12,648 --> 00:10:16,611
+All right, we have a lot
+to cover in this course.
+
+131
+00:10:16,611 --> 00:10:18,220
+Let's go ahead and get started.
+

@@ -1,0 +1,164 @@
+1
+00:00:09,920 --> 00:00:14,305
+Location transparency delivers cost
+optimizations in a distributed system
+
+2
+00:00:14,365 --> 00:00:16,826
+because you only have to develop once.
+
+3
+00:00:16,826 --> 00:00:21,165
+You build the code in the local
+development environment and you can deploy
+
+4
+00:00:21,224 --> 00:00:25,858
+to staging, to production and it could
+scale to let's say 100 billion actor
+
+5
+00:00:25,920 --> 00:00:30,480
+messages daily and you're using the same
+code, the same APIs as a distributed
+
+6
+00:00:30,536 --> 00:00:37,378
+systems system. And the code is acting the
+same way, whether it's executing locally
+
+7
+00:00:37,460 --> 00:00:41,705
+with very low latency or
+globally with low latency.
+
+8
+00:00:41,705 --> 00:00:48,257
+The abstraction is a way of reducing
+the maintenance overhead getting faster
+
+9
+00:00:48,257 --> 00:00:53,481
+deployments and also having
+zero cost horizontal scaling.
+
+10
+00:00:53,481 --> 00:00:57,753
+This is and also with newer languages
+built on our language like Elixir, and
+
+11
+00:00:57,802 --> 00:01:00,058
+then also the Actix
+framework built on Rust.
+
+12
+00:01:00,058 --> 00:01:05,523
+The idea here is that there's one API, you
+can go any distance and you don't have to
+
+13
+00:01:05,523 --> 00:01:11,121
+make code changes. So in terms of looking
+through the core ideas here if you look at
+
+14
+00:01:11,194 --> 00:01:16,351
+the architecture metrics, so in terms
+looking through core ideas, you can see
+
+15
+00:01:16,410 --> 00:01:21,702
+that local execution is extremely fast and
+there's zero sterilization costs, remote
+
+16
+00:01:21,755 --> 00:01:26,543
+execution as well. We look at cluster
+routing or memory overhead or throughput,
+
+17
+00:01:26,606 --> 00:01:29,406
+you're able to get incredible performance.
+
+18
+00:01:29,406 --> 00:01:35,139
+And then in terms of the impact on feature
+development and maintenance cost because
+
+19
+00:01:35,203 --> 00:01:40,220
+you built with location transparency from
+the beginning so you're trying to build,
+
+20
+00:01:40,820 --> 00:01:46,861
+where processes and communication are part
+of what your core product is, it makes
+
+21
+00:01:46,861 --> 00:01:53,502
+efficiency very fast. So you can have
+ability to scale from zero to 10,000
+
+22
+00:01:53,600 --> 00:01:57,112
+nodes. You have good failure recovery.
+
+23
+00:01:57,112 --> 00:02:03,380
+You really good test coverage as well
+because you can code reuse from dev
+
+24
+00:02:04,120 --> 00:02:09,299
+Then finally, you have message guarantees
+because you're ordering based on
+
+25
+00:02:09,299 --> 00:02:15,939
+preserving Percenter receiver pairs
+and you can have at most once delivery
+
+26
+00:02:16,028 --> 00:02:18,571
+automatic fillover to replica actors.
+
+27
+00:02:18,571 --> 00:02:22,426
+And also, you'll have location
+updates via Gossip Protocol.
+
+28
+00:02:22,426 --> 00:02:28,400
+So in terms of risk mitigation as well,
+you will network partition tolerance and
+
+29
+00:02:28,400 --> 00:02:33,229
+network with vector clocks, and you also
+have the ability to monitor things like
+
+30
+00:02:33,301 --> 00:02:38,500
+back pressure and also use dead letter
+cues to capture undeliverable messages.
+
+31
+00:02:38,980 --> 00:02:45,320
+So in a nutshell, this is an item
+potent design that enables safe retry
+
+32
+00:02:45,320 --> 00:02:51,905
+and And this pattern does
+work very well for agents and
+
+33
+00:02:51,970 --> 00:02:54,660
+subagents like Claude code and subagents.
+
+34
+00:02:55,140 --> 00:02:58,960
+And
+
