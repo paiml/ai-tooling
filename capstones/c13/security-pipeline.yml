@@ -1,4 +1,4 @@
-# Capstone 13 example pipeline: one workflow, one unified SARIF view.
+# Capstone 13 example pipeline: one workflow, one SARIF upload per image.
 # Provable contract: actionlint passes and grype emits SARIF 2.1.0.
 name: security-pipeline
 on:
