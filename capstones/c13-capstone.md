@@ -40,3 +40,13 @@ Add this capstone to your LinkedIn profile as a portfolio project:
 2. Title: "Privacy-Conscious Development with AI Assistants — Applied AI Engineering Specialization"
 3. Description: Summarize the project deliverables and key skills demonstrated
 4. Link: Include the URL to your completed GitHub repository
+
+## What to Submit
+
+Submit the URL of one GitHub repository that contains:
+
+1. A `reviews/` folder with one written finding for each of the at least ten code files you reviewed (severity, reproduction steps, remediation).
+2. A workflow in `.github/workflows/` that runs on every pull request, modelled on [`c13/security-pipeline.yml`](c13/security-pipeline.yml): it scans at least two container images with Grype and uploads each result as SARIF, so the findings appear together in the repository's Security view (the tab is now labelled "Security and quality").
+3. A `PRIVACY.md` with your three-tool assessment framework.
+
+Notes on the pipeline: GitHub code scanning and secret scanning run for free on public repositories; private repositories need GitHub Code Security and GitHub Secret Protection (see <https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security>). Dependabot reports go to Dependabot alerts, not to code scanning, so they sit beside the SARIF results rather than inside them.
