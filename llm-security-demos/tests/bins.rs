@@ -60,3 +60,28 @@ fn rate_front_binary_five_ok_five_429() {
     assert_eq!(codes.iter().filter(|c| c.contains("200")).count(), 5);
     assert_eq!(codes.iter().filter(|c| c.contains("429")).count(), 5);
 }
+
+#[test]
+fn reply_guard_rejects_secret_and_accepts_clean() {
+    use std::io::Write;
+    use std::process::{Command, Stdio};
+    let run = |reply: &str| {
+        let mut c = Command::new(env!("CARGO_BIN_EXE_reply-guard"))
+            .arg("swordfish")
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .spawn()
+            .unwrap();
+        c.stdin.take().unwrap().write_all(reply.as_bytes()).unwrap();
+        let o = c.wait_with_output().unwrap();
+        (
+            o.status.code().unwrap(),
+            String::from_utf8(o.stdout).unwrap(),
+        )
+    };
+    assert_eq!(
+        run("the code is SWORDFISH"),
+        (1, "LEAK secret code found at byte 12\n".to_string())
+    );
+    assert_eq!(run("I cannot share that"), (0, "OK\n".to_string()));
+}
