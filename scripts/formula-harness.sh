@@ -18,8 +18,7 @@ if [ ! -x "$guard" ]; then
   exit 2
 fi
 work="$(mktemp -d)" || exit 2
-case "$work" in /tmp/*|/mnt/*|/var/*) ;; *) echo "bad temp dir" >&2; exit 2 ;; esac
-trap 'rm -rf "${work:?}"' EXIT
+trap "rm -rf \"\${work:?}\" || exit 1" EXIT
 echo "== guard =="
 "$guard" "$csv"
 guard_rc=$?
