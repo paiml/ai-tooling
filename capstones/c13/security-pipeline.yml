@@ -1,0 +1,29 @@
+# Capstone 13 example pipeline: one workflow, one SARIF upload per image.
+# Provable contract: actionlint passes and grype emits SARIF 2.1.0.
+name: security-pipeline
+on:
+  pull_request:
+permissions:
+  contents: read
+  security-events: write
+jobs:
+  container-scan:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image: ["alpine:3.19", "debian:bookworm-slim"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Grype scan (SARIF)
+        id: grype
+        uses: anchore/scan-action@v7.4.2
+        with:
+          image: ${{ matrix.image }}
+          severity-cutoff: critical
+          fail-build: false
+          output-format: sarif
+      - name: Upload SARIF to the repository Security view
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ steps.grype.outputs.sarif }}
+          category: grype-${{ matrix.image }}
