@@ -5,3 +5,5 @@ examples/*/target/
 examples/*/tools/
 examples/*/build/
 .examples-checked
+
+llm-security-demos/target/

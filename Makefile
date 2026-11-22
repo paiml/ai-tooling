@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: help lint test test-fast coverage fmt fmt-check check bench contexts shell
+.PHONY: demos help lint test test-fast coverage fmt fmt-check check bench contexts shell
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -44,7 +44,7 @@ fmt: ## Format (no-op for markdown repo)
 fmt-check: ## Check formatting
 	@echo "No formatter configured for markdown-only repo"
 
-check: lint shell test contexts ## Run all checks
+check: lint shell test contexts demos ## Run all checks
 	@echo "=== All checks passed ==="
 
 bench: ## Benchmark (no-op)
@@ -62,3 +62,6 @@ shell: ## Every gate here is a shell script, so the scripts are gated too
 	  echo "  bashrs lint $$s"; \
 	  bashrs lint "$$s" || exit 1; \
 	done
+
+demos: ## llm-security-demos crate: fmt, clippy, tests (coverage runs via cargo llvm-cov)
+	@cd llm-security-demos && cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test
