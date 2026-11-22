@@ -14,5 +14,9 @@ name = "rate-front"
 path = "src/bin/rate_front.rs"
 
 [[bin]]
+name = "reply-guard"
+path = "src/bin/reply_guard.rs"
+
+[[bin]]
 name = "csv-guard"
 path = "src/bin/csv_guard.rs"

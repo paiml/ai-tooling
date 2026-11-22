@@ -7,3 +7,5 @@ Demo code for the llm-security course. Everything binds to localhost.
 - `scripts/formula-harness.sh MODEL_OUTPUT.csv`: runs the guard, then has LibreOffice evaluate the same file and prints the evaluated cells (`=1+1` becomes `2`). `DISPLAY_99=1` also opens it on display :99.
 
 Provable contract: the limiter admits exactly `limit` requests per window; the guard rejects every trigger character. Tests: `cargo test`; coverage: `cargo llvm-cov`.
+
+- `reply-guard SECRET [FILE|-]`: rejects a model reply that contains the secret code (any letter case): `LEAK secret code found at byte N` exit 1, else `OK` exit 0; usage or read error exit 2. For the prompt-injection video.
