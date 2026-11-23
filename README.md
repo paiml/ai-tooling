@@ -76,3 +76,7 @@ Every module ends with a **Critical Thinking Assessment** (quiz + role-play prac
 ## License
 
 Course content copyright Pragmatic AI Labs. Code examples are MIT licensed.
+
+<!-- FUNNEL-001 footer: replace ai-tooling with the repo name -->
+---
+📚 **Learn this hands-on:** [Pragmatic AI Labs courses on Coursera](https://www.coursera.org/partners/pragmatic-ai-labs?utm_source=github&utm_medium=readme&utm_campaign=funnel_2026q4&utm_content=ai-tooling) · ✉ [Free newsletter](https://ds500.paiml.com/mailing?utm_source=github&utm_medium=readme&utm_campaign=funnel_2026q4&utm_content=ai-tooling)
